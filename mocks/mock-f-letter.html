@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock F — The Letter · Karan Kapoor</title>
+<style>
+@font-face{font-family:'Literata';src:url('fonts/Literata-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Literata';src:url('fonts/Literata-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Literata';src:url('fonts/Literata-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Literata';src:url('fonts/Literata-600.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  --yellow:#FDDA0D;
+  --ink:#000000;
+  --paper:#ffffff;
+  --rule:rgba(0,0,0,.15);
+  --muted:rgba(0,0,0,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Literata',Georgia,serif;
+  font-size:1.25rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;text-decoration-color:var(--ink)}
+a:hover{background:var(--yellow)}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+::selection{background:var(--yellow);color:var(--ink)}
+.wrap{max-width:41rem;margin:0 auto;padding:0 1.5rem}
+
+/* the highlighter — slightly rotated mark behind text */
+.hl{
+  background:linear-gradient(104deg, transparent 0.5%, var(--yellow) 2.7%, var(--yellow) 97.5%, transparent 99%);
+  padding:.05em .15em;margin:-.05em -.15em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+
+/* header */
+header{padding:2.4rem 0 0}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline}
+.sitename{font-weight:600;font-size:1.02rem;letter-spacing:.02em;text-decoration:none}
+.sitename:hover{background:var(--yellow)}
+nav ul{list-style:none;display:flex;gap:1.6rem}
+nav a{font-size:.92rem;font-style:italic;text-decoration:none;color:var(--muted)}
+nav a[aria-current]{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:5px}
+nav a:hover{background:var(--yellow);color:var(--ink)}
+
+/* the letter */
+.letter{padding:5rem 0 4.5rem}
+.letter > .wrap > p{margin-bottom:1.6rem}
+.letter > .wrap > p:last-child{margin-bottom:0}
+.opening{font-size:1.7rem;line-height:1.5;font-weight:400;text-wrap:pretty}
+.announce{font-size:1.45rem;line-height:1.62}
+
+/* blurbs — as marginalia-style quotations */
+.blurbs{padding:1rem 0 4rem}
+.blurbs .wrap > p.kicker{font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:2.4rem}
+blockquote{margin-bottom:2.6rem}
+blockquote p{font-style:italic;font-size:1.22rem;text-wrap:pretty}
+blockquote cite{display:block;margin-top:.8rem;font-style:normal;font-weight:500;font-size:1rem}
+blockquote cite::before{content:"— "}
+blockquote cite .hl{font-weight:500}
+
+hr{border:0;max-width:41rem;margin:0 auto;padding:0 1.5rem;border-top:1px solid var(--rule)}
+
+/* more on thirst */
+.more{padding:4rem 0 4.5rem}
+.more .wrap > p{margin-bottom:1.6rem;font-size:1.12rem}
+.more .wrap > p:last-child{margin-bottom:0}
+.more .prizes{font-size:1rem;color:var(--muted)}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);padding:2.8rem 0 3.2rem;margin-top:2rem}
+footer .wrap{display:flex;flex-direction:column;gap:1rem}
+footer p{font-size:1.05rem}
+footer a{color:var(--yellow);text-decoration-color:rgba(253,218,13,.4)}
+footer a:hover{background:var(--yellow);color:var(--ink)}
+footer .links{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.95rem;font-style:italic}
+footer .links a{color:var(--paper);text-decoration-color:rgba(255,255,255,.35)}
+footer .links a:hover{background:var(--yellow);color:var(--ink)}
+
+/* reveal */
+@media (prefers-reduced-motion: no-preference){
+  .rise{overflow:clip}
+  .rise[data-hidden] > *{display:block;transform:translateY(1.1em);opacity:0}
+  .rise.revealed > *{display:block;transition:transform .4s cubic-bezier(.2,.7,.3,1),opacity .4s ease;transform:translateY(0);opacity:1}
+}
+@media (max-width:520px){
+  header .wrap{flex-direction:column;gap:.9rem}
+  .opening{font-size:1.45rem}
+  .announce{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="sitename" href="#">Karan Kapoor</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Poems</a></li>
+        <li><a href="#">Photographs</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="letter">
+    <div class="wrap">
+      <p class="opening">Karan Kapoor is the Co-Founder &amp; Editor-in-Chief of <a href="https://onlypoems.com/"><em>ONLY&nbsp;POEMS</em></a> and <a href="https://www.strangepilgrims.com/"><em>Strange Pilgrims</em></a>. His poems have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Shenandoah</em>, <em>Colorado Review</em>, and elsewhere, fiction in <em>JOYLAND</em> and <em>the other side of hope</em>, and translations in <em>The Offing</em> and <em>The Los Angeles Review</em>. He lives in Toronto, Canada with his wife &amp; daughter.</p>
+      <p class="announce"><span class="hl"><em>THIRST</em>, his debut poetry collection, is forthcoming from <a href="https://www.alicejamesbooks.org/bookstore/thirst">Alice James Books</a> in April 2028</span> — over 50 poems profiling his father through hybrid and traditional forms. You can <a href="https://www.alicejamesbooks.org/bookstore/thirst">pre-order it here</a>.</p>
+    </div>
+  </section>
+
+  <section class="blurbs">
+    <div class="wrap">
+      <p class="kicker rise" data-hidden><span>What poets say</span></p>
+      <blockquote class="rise" data-hidden>
+        <span>
+        <p>“I like Karan's poems. They have a mix of imagination and substance that's very appealing to me...“the sky must hate us/ as it sees everything we do.” I'd like to have written that...I’m especially drawn to the combination of directness and privacy in his poems, and the creation of a world within a world."</p>
+        <cite><span class="hl">Bob Hicok</span></cite>
+        </span>
+      </blockquote>
+      <blockquote class="rise" data-hidden>
+        <span>
+        <p>“These poems are, no bullshit, the real deal. You are the real deal, Karan. You are a real poet.”</p>
+        <cite><span class="hl">Kaveh Akbar</span></cite>
+        </span>
+      </blockquote>
+      <blockquote class="rise" data-hidden>
+        <span>
+        <p>“This devastating poem explores gendered responses to grief, and vividly evokes the aftermath of a process of cremation in India, seen here from the inside, as it were, from a speaker both embedded in his culture and in some ways estranged from it.”</p>
+        <cite><span class="hl">Mark Doty</span></cite>
+        </span>
+      </blockquote>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="more">
+    <div class="wrap">
+      <p class="rise" data-hidden><span>Though borrowing heavily from personal experience, this collection is constructed with dream and distance. Rooted in the specific time and place of modern Northern India, the themes I explore radiate outwards, and hopefully, this work is as much a mirror as it is a memoir. I am attempting to forge a space for myself, an Indian poet of a fragmented, autocratic past directly marred by the colonial era, in the American poetry scene.</span></p>
+      <p class="rise" data-hidden><span>This collection is composed of over 50 poems profiling my father through hybrid forms (such as the interview, questionnaire, visual fragments, prose poems) and traditional forms (villanelle, ghazal, free verse). The poems attempt an obsessive portrait of another that eventually becomes a self-portrait.</span></p>
+      <p class="prizes rise" data-hidden><span>A portion of this collection was a finalist for <em>Diode</em>, <em>Iron Horse Literary Review</em>, and <em>Tusculum Review</em> Chapbook Prizes, as well as shortlisted for the <em>Rattle</em> Chapbook prize. The full-length collection was also a finalist for the Charles B. Wheeler Poetry Prize (<em>The Journal</em>), the Felix Pollack Poetry Prize (University of Wisconsin-Madison Press) and the <em>Barrow Street</em> Book Prize. Poems from this collection have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Rattle</em>, <em>Plume</em>, <em>TAB</em>, <em>Poetry Ireland Review</em>, <em>New Welsh Review</em>, <em>Poetry Online</em>, <em>Frontier Poetry</em>, <em>The Margins</em>, <em>Southword</em> and elsewhere.</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Write to him at <a href="mailto:karan@onlypoems.com">karan@onlypoems.com</a></p>
+    <div class="links">
+      <a href="https://onlypoems.com/">ONLY POEMS</a>
+      <a href="https://www.strangepilgrims.com/">Strange Pilgrims</a>
+      <a href="https://www.instagram.com/whyareyounotreading/">Instagram</a>
+      <a href="https://substack.com/@poetkarankapoor">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.rise[data-hidden]').forEach(el=>el.removeAttribute('data-hidden'));
+    return;
+  }
+  document.querySelectorAll('.rise[data-hidden]').forEach(el=>{
+    if (el.getBoundingClientRect().top < innerHeight * 0.96) el.removeAttribute('data-hidden');
+  });
+  let lastY = scrollY, lastT = performance.now();
+  const io = new IntersectionObserver((entries)=>{
+    const now = performance.now();
+    const fast = Math.abs(scrollY - lastY) / Math.max(1, now - lastT) > 3;
+    lastY = scrollY; lastT = now;
+    let i = 0;
+    entries.forEach(e=>{
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      io.unobserve(el);
+      if (fast) { el.removeAttribute('data-hidden'); return; }
+      setTimeout(()=>{ el.classList.add('revealed'); el.removeAttribute('data-hidden'); }, i++ * 70);
+    });
+  }, {rootMargin:'0px 0px -4% 0px'});
+  document.querySelectorAll('.rise[data-hidden]').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
