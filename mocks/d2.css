@@ -81,9 +81,9 @@ img{max-width:100%;height:auto;display:block;border-radius:var(--r)}
   padding:.95rem 2.1rem;border-radius:8px;
   transition:transform .22s cubic-bezier(.2,.8,.2,1), background-color .22s, color .22s;
 }
-.btn:hover{transform:scale(1.04);background:var(--yellow);color:var(--ink);outline:2px solid var(--ink);outline-offset:-2px}
+.btn:hover{transform:scale(1.055);background:var(--yellow);color:var(--ink);outline:2px solid var(--ink);outline-offset:-2px}
 .on-dark .btn{background:var(--yellow);color:var(--ink)}
-.on-dark .btn:hover{background:var(--paper);outline:none}
+.on-dark .btn:hover{transform:scale(1.055);background:var(--ink);color:var(--yellow);outline:2px solid var(--yellow);outline-offset:-2px}
 
 /* ---------- kickers / section labels ---------- */
 .kicker{
@@ -108,15 +108,19 @@ blockquote.blurb cite::before{content:"— "}
 .site-foot{background:var(--ink);color:var(--yellow);padding-block:2.6rem 3rem}
 .site-foot .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.4rem}
 .site-foot .place{font-style:italic;font-size:.98rem;color:var(--muted-inv)}
-.site-foot .links{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.site-foot .links{display:flex;gap:1.9rem;flex-wrap:wrap;align-items:center}
 .icon-link{
-  display:grid;place-items:center;width:2.6rem;height:2.6rem;color:var(--yellow);
-  border:1px solid rgba(253,218,13,.35);border-radius:999px;text-decoration:none;
-  transition:transform .22s cubic-bezier(.2,.8,.2,1), border-color .22s, color .22s;
+  display:grid;place-items:center;color:var(--yellow);text-decoration:none;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), color .22s;
 }
-.icon-link:hover{transform:scale(1.12);border-color:var(--yellow);color:#fff}
+.icon-link:hover{transform:scale(1.15);color:#fff}
 .icon-link svg{display:block;overflow:visible}
-.icon-link .mono{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.78rem;letter-spacing:.06em}
+.logo-mask{
+  display:block;background:currentColor;
+  -webkit-mask:var(--mask) center/contain no-repeat;mask:var(--mask) center/contain no-repeat;
+}
+.logo-op{width:27px;height:29px}
+.logo-sp{width:24px;height:32px}
 /* envelope: flap opens on hover (the masthead move, recolored) */
 .mail-link .m-body{fill:none;stroke:currentColor;stroke-width:2.2}
 .mail-link .m-flap{

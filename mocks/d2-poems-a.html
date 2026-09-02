@@ -24,17 +24,23 @@
   padding:1.35rem .35rem;text-decoration:none;color:var(--ink);
 }
 .rowlink .ptitle{
-  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.1rem,2.2vw,1.5rem);
-  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;display:inline;
+  font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.15rem,2vw,1.4rem);
+  letter-spacing:.01em;line-height:1.35;display:inline;
+}
+.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap;transition:color .22s}
+a.rowlink:hover .venue{color:var(--ink)}
+/* hover style 1: marker highlight behind the title */
+.style-highlight a.rowlink .ptitle{transition:background-color .22s;padding:.06em .18em;margin:-.06em -.18em;border-radius:4px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.style-highlight a.rowlink:hover .ptitle{background-color:var(--yellow)}
+/* hover style 2: thin underline draws on */
+.style-underline a.rowlink .ptitle{
   background-image:linear-gradient(var(--yellow),var(--yellow));
-  background-repeat:no-repeat;background-size:0% .13em;background-position:0 96%;
+  background-repeat:no-repeat;background-size:0% .09em;background-position:0 94%;
   transition:background-size .3s cubic-bezier(.2,.8,.2,1);
 }
-a.rowlink:hover .ptitle{background-size:100% .13em}
-.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap;transition:color .22s}
-a.rowlink .venue::after{content:" ↗";font-style:normal;font-size:.85em}
-a.rowlink:hover .venue{color:var(--ink)}
-div.rowlink .venue::after{content:""}
+.style-underline a.rowlink:hover .ptitle{background-size:100% .09em}
+.style-label{margin-bottom:1rem}
 .fiction-head{margin-top:3.5rem;margin-bottom:1rem}
 @media (max-width:620px){
   .rowlink{grid-template-columns:1fr;gap:.25rem}
@@ -62,6 +68,8 @@ div.rowlink .venue::after{content:""}
 </div>
 
 <main class="ledger wrap">
+  <p class="kicker style-label">Hover style 1 · marker highlight</p>
+  <div class="style-highlight">
   <ul class="poemlist">
     <li><a class="rowlink" href="https://rattle.com/circles-by-karan-kapoor/"><span class="ptitle">Circles</span><span class="venue">Rattle</span></a></li>
     <li><a class="rowlink" href="https://aaww.org/water-under-the-bed/"><span class="ptitle">Water Under the Bed</span><span class="venue">Margins</span></a></li>
@@ -86,6 +94,35 @@ div.rowlink .venue::after{content:""}
   <ul class="poemlist">
     <li><a class="rowlink" href="https://joylandmagazine.com/fiction/a-perfect-house-is-where-no-one-lives/"><span class="ptitle">A Perfect House Is Where No One Lives</span><span class="venue">JOYLAND</span></a></li>
   </ul>
+  </div>
+
+  <p class="kicker style-label" style="margin-top:4.5rem">Hover style 2 · underline draws on</p>
+  <div class="style-underline">
+  <ul class="poemlist">
+    <li><a class="rowlink" href="https://rattle.com/circles-by-karan-kapoor/"><span class="ptitle">Circles</span><span class="venue">Rattle</span></a></li>
+    <li><a class="rowlink" href="https://aaww.org/water-under-the-bed/"><span class="ptitle">Water Under the Bed</span><span class="venue">Margins</span></a></li>
+    <li><a class="rowlink" href="https://thegoodlifereview.com/2024/07/01/love-letters-by-karan-kapoor/"><span class="ptitle">Love Letters</span><span class="venue">The Good Life Review</span></a></li>
+    <li><a class="rowlink" href="https://hoaxpublication.org/works/karan-kapoor-how-to-quit"><span class="ptitle">How to Quit</span><span class="venue">Hoax</span></a></li>
+    <li><a class="rowlink" href="https://www.mainereview.com/i-dont-think-its-fair/"><span class="ptitle">I Don’t Think It’s Fair</span><span class="venue">The Maine Review</span></a></li>
+    <li><a class="rowlink" href="https://bansheepress.org/read/rings-of-saturn-by-karan-kapoor"><span class="ptitle">Rings of Saturn</span><span class="venue">Banshee Press</span></a></li>
+    <li><div class="rowlink"><span class="ptitle">Things With Which We Foul the Ganges</span><span class="venue">The Cincinnati Review</span></div></li>
+    <li><a class="rowlink" href="https://muse.jhu.edu/pub/220/article/912441/pdf"><span class="ptitle">Dida</span><span class="venue">Colorado Review</span></a></li>
+    <li><div class="rowlink"><span class="ptitle">There Is No Time Here</span><span class="venue">Bellevue Literary Review</span></div></li>
+    <li><div class="rowlink"><span class="ptitle">A Braid of Unknowing I Tie Before You</span><span class="venue">North American Review</span></div></li>
+    <li><a class="rowlink" href="https://rattle.com/ghazal-for-dida-by-karan-kapoor/"><span class="ptitle">Ghazal for Dida</span><span class="venue">Rattle</span></a></li>
+    <li><a class="rowlink" href="https://www.addastories.org/holding-fingers-water/"><span class="ptitle">Holding the Fingers of Water</span><span class="venue">Commonwealth Foundation</span></a></li>
+    <li><a class="rowlink" href="https://ex-puritan.ca/there-are-51-descriptions-of-you-on-the-wall-so-far"><span class="ptitle">There Are 51 Descriptions of You on the Wall So Far</span><span class="venue">The Ex-Puritan</span></a></li>
+    <li><a class="rowlink" href="https://poetry.onl/read/kar-kap"><span class="ptitle">‘I Am’ Is a Sentence, ‘You Are’ Is Not</span><span class="venue">Poetry Online</span></a></li>
+    <li><div class="rowlink"><span class="ptitle">This One’s Barely About Him</span><span class="venue">Poetry Ireland</span></div></li>
+    <li><div class="rowlink"><span class="ptitle">Time Is a Motherfucker</span><span class="venue">Strange Horizons</span></div></li>
+    <li><div class="rowlink"><span class="ptitle">Snot Everywhere</span><span class="venue">Shenandoah</span></div></li>
+  </ul>
+
+  <p class="kicker fiction-head">&amp; a short story</p>
+  <ul class="poemlist">
+    <li><a class="rowlink" href="https://joylandmagazine.com/fiction/a-perfect-house-is-where-no-one-lives/"><span class="ptitle">A Perfect House Is Where No One Lives</span><span class="venue">JOYLAND</span></a></li>
+  </ul>
+  </div>
 </main>
 
 <footer class="site-foot on-dark">
@@ -93,15 +130,15 @@ div.rowlink .venue::after{content:""}
     <p class="place">Toronto, Canada</p>
     <div class="links">
       <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
-        <svg viewBox="0 0 34 26" width="26" height="20" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+        <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
       </a>
-      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="mono">OP</span></a>
-      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="mono">SP</span></a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op" style="--mask:url('img/op-logo.png')"></span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp" style="--mask:url('img/sp-logo.png')"></span></a>
       <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
       </a>
       <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
-        <svg viewBox="0 0 24 24" width="17" height="19" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+        <svg viewBox="0 0 24 24" width="19" height="21" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
       </a>
     </div>
   </div>

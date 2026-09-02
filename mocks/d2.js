@@ -3,11 +3,23 @@
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Lenis — lerp .075, wheelMultiplier .9 (measured from onlypoems.com)
+  var lenis = null;
   if (!reduced && window.Lenis) {
-    var lenis = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true });
+    lenis = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true });
     function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
   }
+
+  // in-page anchors glide (the OP masthead feel)
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { duration: 1.5, easing: function (t) { return 1 - Math.pow(1 - t, 4); } });
+      else target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    });
+  });
 
   // Baseline-rise reveal (below fold only; dies under reduced motion)
   var hidden = document.querySelectorAll('.rise[data-hidden]');

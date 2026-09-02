@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D2 Photographs — Flip Demo · Karan Kapoor</title>
+<link rel="stylesheet" href="d2.css">
+<style>
+.band{background:var(--yellow);color:var(--ink)}
+.band .titlebox{padding-block:clamp(2.2rem,5vw,3.6rem)}
+.band h1{font-family:'Fraunces',Georgia,serif;font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,7vw,5rem);line-height:1;font-variation-settings:'opsz' 144}
+.band .note{margin-top:1rem;font-style:italic;font-size:1.05rem}
+.epigraph{padding-block:clamp(2.6rem,5vw,4rem);text-align:center}
+.epigraph p{font-size:clamp(1.25rem,2.4vw,1.6rem);font-style:italic}
+.epigraph cite{display:block;margin-top:.5rem;font-style:normal;font-family:'Fraunces',Georgia,serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.grid{columns:3 18rem;gap:1.6rem;padding-bottom:clamp(3rem,6vw,5rem)}
+.flipcard{break-inside:avoid;margin-bottom:1.6rem;perspective:1200px;cursor:pointer;outline:none}
+.flipcard:focus-visible .inner{outline:2px solid var(--ink);outline-offset:3px;border-radius:var(--r)}
+.flipcard .inner{position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.25,1);will-change:transform}
+.flipcard.flipped .inner{transform:rotateY(180deg) !important}
+.face{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r)}
+.front img{width:100%;border-radius:var(--r)}
+.front figcaption{margin-top:.55rem;font-style:italic;font-size:.95rem;color:var(--muted)}
+.back{position:absolute;inset:0;transform:rotateY(180deg);background:var(--ink);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;gap:1rem;padding:clamp(1.2rem,8%,2rem);overflow:hidden}
+.back .btitle{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--yellow);font-size:1.15rem}
+.back .bpoem{font-style:italic;font-size:.98rem;line-height:1.7}
+.back .bpoem span{display:block}
+.back .bnote{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-inv);font-family:'Fraunces',Georgia,serif}
+@media (prefers-reduced-motion: reduce){.flipcard .inner{transition:none}}
+@media (max-width:560px){.site-head{flex-direction:column;gap:1rem;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="band on-yellow">
+  <header class="wrap site-head">
+    <a class="mark" href="d2-home.html">Karan Kapoor</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="d2-home.html">Home</a></li>
+        <li><a href="d2-poems-a.html">Poems</a></li>
+        <li><a href="d2-photos-flip.html" aria-current="page">Photographs</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="wrap titlebox">
+    <h1>Photographs</h1>
+    <p class="note">Demo: hover to tilt, click to turn the photograph over.</p>
+  </div>
+</div>
+<main class="wrap">
+  <div class="epigraph">
+    <p>“A photograph: poetry made image.”</p>
+    <cite>―Sivi le poète</cite>
+  </div>
+  <div class="grid">
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Solitude">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/solitude-700.jpg" alt="Solitude" width="393" height="700" loading="lazy">
+      <figcaption>Solitude</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Solitude</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Mischief">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/mischief-700.jpg" alt="Mischief" width="700" height="521" loading="lazy">
+      <figcaption>Mischief</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Mischief</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Repose">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/repose-700.jpg" alt="Repose" width="700" height="393" loading="lazy">
+      <figcaption>Repose</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Repose</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Collision">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/collision-700.jpg" alt="Collision" width="393" height="700" loading="lazy">
+      <figcaption>Collision</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Collision</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Passion">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/passion-700.jpg" alt="Passion" width="700" height="485" loading="lazy">
+      <figcaption>Passion</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Passion</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind The Hand of Rodin">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/the-hand-of-rodin-700.jpg" alt="The Hand of Rodin" width="700" height="478" loading="lazy">
+      <figcaption>The Hand of Rodin</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">The Hand of Rodin</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Self-portrait, van Gogh">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/self-portrait-van-gogh-700.jpg" alt="Self-portrait, van Gogh" width="393" height="700" loading="lazy">
+      <figcaption>Self-portrait, van Gogh</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Self-portrait, van Gogh</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Platonic Self">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/platonic-self-700.jpg" alt="Platonic Self" width="612" height="700" loading="lazy">
+      <figcaption>Platonic Self</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Platonic Self</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Melancholia (VvG)">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/melancholia-vvg-700.jpg" alt="Melancholia (VvG)" width="393" height="700" loading="lazy">
+      <figcaption>Melancholia (VvG)</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Melancholia (VvG)</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Roses for you (VvG)">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/roses-for-you-vvg-700.jpg" alt="Roses for you (VvG)" width="700" height="532" loading="lazy">
+      <figcaption>Roses for you (VvG)</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Roses for you (VvG)</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Ground Swell, Edward Hopper">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/ground-swell-edward-hopper-700.jpg" alt="Ground Swell, Edward Hopper" width="700" height="393" loading="lazy">
+      <figcaption>Ground Swell, Edward Hopper</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Ground Swell, Edward Hopper</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Blooming">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/blooming-700.jpg" alt="Blooming" width="700" height="393" loading="lazy">
+      <figcaption>Blooming</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Blooming</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Marble-veil">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/marble-veil-700.jpg" alt="Marble-veil" width="700" height="393" loading="lazy">
+      <figcaption>Marble-veil</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Marble-veil</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Age of Bronze, Rodin">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/age-of-bronze-rodin-700.jpg" alt="Age of Bronze, Rodin" width="517" height="700" loading="lazy">
+      <figcaption>Age of Bronze, Rodin</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Age of Bronze, Rodin</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Nightsky with Exit Wounds">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/nightsky-with-exit-wounds-700.jpg" alt="Nightsky with Exit Wounds" width="480" height="700" loading="lazy">
+      <figcaption>Nightsky with Exit Wounds</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Nightsky with Exit Wounds</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Decay">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/decay-700.jpg" alt="Decay" width="700" height="393" loading="lazy">
+      <figcaption>Decay</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Decay</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Shame">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/shame-700.jpg" alt="Shame" width="700" height="574" loading="lazy">
+      <figcaption>Shame</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Shame</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Machine">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/machine-700.jpg" alt="Machine" width="393" height="700" loading="lazy">
+      <figcaption>Machine</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Machine</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Lost">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/lost-700.jpg" alt="Lost" width="700" height="393" loading="lazy">
+      <figcaption>Lost</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Lost</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Ruinous">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/ruinous-700.jpg" alt="Ruinous" width="700" height="451" loading="lazy">
+      <figcaption>Ruinous</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Ruinous</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Fall">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/fall-700.jpg" alt="Fall" width="700" height="542" loading="lazy">
+      <figcaption>Fall</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Fall</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Still lost">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/still-lost-700.jpg" alt="Still lost" width="700" height="393" loading="lazy">
+      <figcaption>Still lost</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Still lost</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Kissing the star">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/kissing-the-star-700.jpg" alt="Kissing the star" width="700" height="401" loading="lazy">
+      <figcaption>Kissing the star</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Kissing the star</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Disappear">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/disappear-700.jpg" alt="Disappear" width="700" height="393" loading="lazy">
+      <figcaption>Disappear</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Disappear</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Caged">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/caged-700.jpg" alt="Caged" width="700" height="393" loading="lazy">
+      <figcaption>Caged</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Caged</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Study in color">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/study-in-color-700.jpg" alt="Study in color" width="393" height="700" loading="lazy">
+      <figcaption>Study in color</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Study in color</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Reaching for the moon">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/reaching-for-the-moon-700.jpg" alt="Reaching for the moon" width="393" height="700" loading="lazy">
+      <figcaption>Reaching for the moon</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Reaching for the moon</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Sky on fire">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/sky-on-fire-700.jpg" alt="Sky on fire" width="700" height="393" loading="lazy">
+      <figcaption>Sky on fire</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Sky on fire</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Under the lights">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/under-the-lights-700.jpg" alt="Under the lights" width="700" height="525" loading="lazy">
+      <figcaption>Under the lights</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Under the lights</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Beloved">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/beloved-700.jpg" alt="Beloved" width="519" height="700" loading="lazy">
+      <figcaption>Beloved</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Beloved</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Beloved’s halo">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/beloved-s-halo-700.jpg" alt="Beloved’s halo" width="700" height="613" loading="lazy">
+      <figcaption>Beloved’s halo</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Beloved’s halo</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Beloved’s colors">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/beloved-s-colors-700.jpg" alt="Beloved’s colors" width="700" height="626" loading="lazy">
+      <figcaption>Beloved’s colors</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Beloved’s colors</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Sink">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/sink-700.jpg" alt="Sink" width="393" height="700" loading="lazy">
+      <figcaption>Sink</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Sink</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Elementary, my dear">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/elementary-my-dear-700.jpg" alt="Elementary, my dear" width="482" height="700" loading="lazy">
+      <figcaption>Elementary, my dear</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Elementary, my dear</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Lovers">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/lovers-700.jpg" alt="Lovers" width="393" height="700" loading="lazy">
+      <figcaption>Lovers</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Lovers</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Composition">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/composition-700.jpg" alt="Composition" width="425" height="700" loading="lazy">
+      <figcaption>Composition</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Composition</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind Cloudfield">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/cloudfield-700.jpg" alt="Cloudfield" width="393" height="700" loading="lazy">
+      <figcaption>Cloudfield</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">Cloudfield</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+<div class="flipcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip to read the poem behind The Lights">
+  <div class="inner">
+    <figure class="face front">
+      <img src="photos/the-lights-700.jpg" alt="The Lights" width="393" height="700" loading="lazy">
+      <figcaption>The Lights</figcaption>
+    </figure>
+    <div class="face back">
+      <p class="btitle">The Lights</p>
+      <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+      <p class="bnote">placeholder poem</p>
+    </div>
+  </div>
+</div>
+  </div>
+</main>
+<footer class="site-foot on-dark">
+  <div class="wrap row">
+    <p class="place">Toronto, Canada</p>
+    <div class="links">
+      <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
+        <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+      </a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op" style="--mask:url('img/op-logo.png')"></span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp" style="--mask:url('img/sp-logo.png')"></span></a>
+      <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
+        <svg viewBox="0 0 24 24" width="19" height="21" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="vendor/lenis.min.js"></script>
+<script src="d2.js"></script>
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.flipcard').forEach(function(card){
+    var inner = card.querySelector('.inner');
+    function flip(){
+      card.classList.toggle('flipped');
+      card.setAttribute('aria-pressed', card.classList.contains('flipped'));
+      if(!card.classList.contains('flipped')) inner.style.transform='';
+    }
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();} });
+    if(reduced) return;
+    card.addEventListener('pointermove', function(e){
+      if(card.classList.contains('flipped')) return;
+      var r=card.getBoundingClientRect();
+      var rx=((e.clientY-r.top)/r.height-.5)*-7;
+      var ry=((e.clientX-r.left)/r.width-.5)*7;
+      inner.style.transform='rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    });
+    card.addEventListener('pointerleave', function(){
+      if(!card.classList.contains('flipped')) inner.style.transform='';
+    });
+  });
+})();
+</script>
+</body>
+</html>

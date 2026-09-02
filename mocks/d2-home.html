@@ -8,6 +8,7 @@
 <style>
 /* ---------- the cover ---------- */
 .cover{min-height:100svh;background:var(--yellow);color:var(--ink);display:flex;flex-direction:column}
+.cover > .wrap{width:100%} /* auto side-margins cancel flex stretch; force full width */
 .cover .middle{flex:1;display:flex;align-items:center;padding-block:2.5rem}
 .cover .grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2.5rem,6vw,5rem);align-items:center;width:100%}
 .cover h1{
@@ -75,6 +76,7 @@
     <div class="grid">
       <div>
         <h1><span>Karan</span><span>Kapoor</span></h1>
+        <p class="coverline">Poet &amp; editor</p>
       </div>
       <img class="portrait" src="img/portrait-1600.jpg" alt="Karan Kapoor reading Milan Kundera's The Festival of Insignificance, a crow flying past" width="1200" height="1600">
     </div>
@@ -102,7 +104,7 @@
         </div>
         <figure class="rise" data-hidden>
           <span>
-            <img src="img/chalhoub.jpg" alt="A screaming figure in scribbled black ink against a cadmium-yellow room — artwork by Naji Chalhoub" width="840" height="1194">
+            <img src="img/chalhoub.jpg" alt="A screaming figure in scribbled black ink against a cadmium-yellow room — artwork by Naji Chalhoub" width="917" height="1303">
             <figcaption>Naji Chalhoub, ink and acrylics on paper (2018)</figcaption>
           </span>
         </figure>
@@ -139,15 +141,15 @@
     <p class="place">Toronto, Canada</p>
     <div class="links">
       <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
-        <svg viewBox="0 0 34 26" width="26" height="20" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+        <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
       </a>
-      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="mono">OP</span></a>
-      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="mono">SP</span></a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op" style="--mask:url('img/op-logo.png')"></span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp" style="--mask:url('img/sp-logo.png')"></span></a>
       <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
       </a>
       <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
-        <svg viewBox="0 0 24 24" width="17" height="19" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+        <svg viewBox="0 0 24 24" width="19" height="21" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
       </a>
     </div>
   </div>
