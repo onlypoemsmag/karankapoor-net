@@ -16,6 +16,7 @@
 
 
 :root{
+  --r:6px;
   --yellow:#FDDA0D;
   --ink:#000000;
   --paper:#ffffff;
@@ -41,7 +42,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .on-dark a:focus-visible{outline-color:var(--yellow)}
 ::selection{background:var(--ink);color:var(--yellow)}
 .wrap{max-width:68rem;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem)}
-img{max-width:100%;height:auto;display:block}
+img{max-width:100%;height:auto;display:block;border-radius:var(--r)}
 
 /* ---------- text links: yellow underline, wash on hover ---------- */
 .tlink{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
@@ -53,19 +54,24 @@ img{max-width:100%;height:auto;display:block}
 .site-head{display:flex;justify-content:space-between;align-items:baseline;padding-block:1.5rem}
 .site-head .mark{
   font-family:'Fraunces',Georgia,serif;font-weight:600;font-style:italic;font-size:1.1rem;
-  color:inherit;text-decoration:none;transition:transform .18s;display:inline-block;
+  color:inherit;text-decoration:none;display:inline;
+  background-image:linear-gradient(currentColor,currentColor);
+  background-repeat:no-repeat;background-size:0% 1.5px;background-position:0 100%;
+  transition:background-size .28s cubic-bezier(.2,.8,.2,1);
 }
-.site-head .mark:hover{transform:translateX(3px)}
+.site-head .mark:hover{background-size:100% 1.5px}
 .site-head nav ul{list-style:none;display:flex;gap:2.1rem}
 .site-head nav a{
   color:inherit;text-decoration:none;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
-  font-family:'Fraunces',Georgia,serif;
-  border-bottom:2px solid transparent;padding-bottom:.25rem;
-  transition:border-color .18s;
+  font-family:'Fraunces',Georgia,serif;padding-bottom:.25rem;
+  background-image:linear-gradient(currentColor,currentColor);
+  background-repeat:no-repeat;background-size:0% 1.5px;background-position:0 100%;
+  transition:background-size .28s cubic-bezier(.2,.8,.2,1);
 }
-.site-head nav a:hover{border-color:currentColor}
-.site-head nav a[aria-current]{border-color:var(--yellow)}
-.on-yellow .site-head nav a[aria-current]{border-color:var(--ink)}
+.site-head nav a:hover{background-size:100% 1.5px}
+.site-head nav a[aria-current]{background-image:linear-gradient(var(--yellow),var(--yellow));background-size:100% 1.5px}
+.on-yellow .site-head nav a[aria-current]{background-image:linear-gradient(var(--ink),var(--ink))}
+.on-dark .site-head nav a[aria-current]{background-image:linear-gradient(var(--yellow),var(--yellow))}
 
 /* ---------- buttons: black pill w/ yellow text (the Karan button) ---------- */
 .btn{
@@ -73,11 +79,11 @@ img{max-width:100%;height:auto;display:block}
   background:var(--ink);color:var(--yellow);text-decoration:none;
   font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;
   padding:.95rem 2.1rem;border-radius:8px;
-  transition:transform .18s, box-shadow .18s;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), background-color .22s, color .22s;
 }
-.btn:hover{transform:translateY(-3px);box-shadow:var(--lift-shadow)}
+.btn:hover{transform:scale(1.04);background:var(--yellow);color:var(--ink);outline:2px solid var(--ink);outline-offset:-2px}
 .on-dark .btn{background:var(--yellow);color:var(--ink)}
-.on-dark .btn:hover{box-shadow:var(--lift-shadow-inv)}
+.on-dark .btn:hover{background:var(--paper);outline:none}
 
 /* ---------- kickers / section labels ---------- */
 .kicker{
@@ -98,17 +104,27 @@ blockquote.blurb cite{
 }
 blockquote.blurb cite::before{content:"— "}
 
-/* ---------- footer ---------- */
+/* ---------- footer: icon row + envelope w/ opening flap ---------- */
 .site-foot{background:var(--ink);color:var(--yellow);padding-block:2.6rem 3rem}
-.site-foot .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:1.1rem}
-.site-foot a{
-  color:var(--yellow);text-decoration:none;font-family:'Fraunces',Georgia,serif;
-  font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
-  display:inline-block;transition:transform .18s;
+.site-foot .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.4rem}
+.site-foot .place{font-style:italic;font-size:.98rem;color:var(--muted-inv)}
+.site-foot .links{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center}
+.icon-link{
+  display:grid;place-items:center;width:2.6rem;height:2.6rem;color:var(--yellow);
+  border:1px solid rgba(253,218,13,.35);border-radius:999px;text-decoration:none;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1), border-color .22s, color .22s;
 }
-.site-foot a:hover{transform:translateY(-2px)}
-.site-foot .mail{font-style:italic;text-transform:none;letter-spacing:0;font-size:1.1rem;font-weight:400}
-.site-foot .links{display:flex;gap:1.9rem;flex-wrap:wrap}
+.icon-link:hover{transform:scale(1.12);border-color:var(--yellow);color:#fff}
+.icon-link svg{display:block;overflow:visible}
+.icon-link .mono{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.78rem;letter-spacing:.06em}
+/* envelope: flap opens on hover (the masthead move, recolored) */
+.mail-link .m-body{fill:none;stroke:currentColor;stroke-width:2.2}
+.mail-link .m-flap{
+  fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+  transform-box:view-box;transform-origin:17px 2.5px;
+  transition:transform .35s cubic-bezier(.3,1.3,.4,1);
+}
+.mail-link:hover .m-flap{transform:translateY(-4px) scaleY(-1)}
 
 /* ---------- baseline-rise reveal ---------- */
 @media (prefers-reduced-motion: no-preference){
@@ -127,7 +143,6 @@ blockquote.blurb cite::before{content:"— "}
   font-size:clamp(2.8rem,8vw,6rem);line-height:1;letter-spacing:.01em;
   font-variation-settings:'opsz' 144;
 }
-.band .note{margin-top:1rem;font-style:italic;font-size:1.1rem}
 
 /* the ledger */
 .ledger{padding-block:clamp(3rem,6vw,5rem)}
@@ -135,15 +150,17 @@ blockquote.blurb cite::before{content:"— "}
 .poemlist li{border-bottom:1px solid var(--rule)}
 .rowlink{
   display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:1.5rem;
-  padding:1.35rem .9rem;text-decoration:none;color:var(--ink);
-  transition:transform .18s, background-color .18s;
+  padding:1.35rem .35rem;text-decoration:none;color:var(--ink);
 }
-a.rowlink:hover{background:var(--yellow);transform:translateX(6px)}
 .rowlink .ptitle{
   font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.1rem,2.2vw,1.5rem);
-  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;
+  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;display:inline;
+  background-image:linear-gradient(var(--yellow),var(--yellow));
+  background-repeat:no-repeat;background-size:0% .13em;background-position:0 96%;
+  transition:background-size .3s cubic-bezier(.2,.8,.2,1);
 }
-.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap}
+a.rowlink:hover .ptitle{background-size:100% .13em}
+.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap;transition:color .22s}
 a.rowlink .venue::after{content:" ↗";font-style:normal;font-size:.85em}
 a.rowlink:hover .venue{color:var(--ink)}
 div.rowlink .venue::after{content:""}
@@ -169,8 +186,7 @@ div.rowlink .venue::after{content:""}
     </nav>
   </header>
   <div class="wrap titlebox">
-    <h1>Selected Poetry</h1>
-    <p class="note">Titles link to the poems where they live online.</p>
+    <h1>Selected Poems</h1>
   </div>
 </div>
 
@@ -203,12 +219,19 @@ div.rowlink .venue::after{content:""}
 
 <footer class="site-foot on-dark">
   <div class="wrap row">
-    <a class="mail" href="mailto:karan@onlypoems.com">karan@onlypoems.com</a>
+    <p class="place">Toronto, Canada</p>
     <div class="links">
-      <a href="https://onlypoems.com/">Only Poems</a>
-      <a href="https://www.strangepilgrims.com/">Strange Pilgrims</a>
-      <a href="https://www.instagram.com/whyareyounotreading/">Instagram</a>
-      <a href="https://substack.com/@poetkarankapoor">Substack</a>
+      <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
+        <svg viewBox="0 0 34 26" width="26" height="20" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+      </a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="mono">OP</span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="mono">SP</span></a>
+      <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
+        <svg viewBox="0 0 24 24" width="17" height="19" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+      </a>
     </div>
   </div>
 </footer>
@@ -251,7 +274,7 @@ div.rowlink .venue::after{content:""}
       if (fast) { el.removeAttribute('data-hidden'); return; }
       setTimeout(function () { el.classList.add('revealed'); el.removeAttribute('data-hidden'); }, i++ * 70);
     });
-  }, { rootMargin: '0px 0px -4% 0px' });
+  }, { rootMargin: '10000px 0px -4% 0px' }); // huge top margin: anything scrolled past still reveals
   document.querySelectorAll('.rise[data-hidden]').forEach(function (el) { io.observe(el); });
 })();
 

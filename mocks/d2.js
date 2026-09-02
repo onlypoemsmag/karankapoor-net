@@ -31,6 +31,6 @@
       if (fast) { el.removeAttribute('data-hidden'); return; }
       setTimeout(function () { el.classList.add('revealed'); el.removeAttribute('data-hidden'); }, i++ * 70);
     });
-  }, { rootMargin: '0px 0px -4% 0px' });
+  }, { rootMargin: '10000px 0px -4% 0px' }); // huge top margin: anything scrolled past still reveals
   document.querySelectorAll('.rise[data-hidden]').forEach(function (el) { io.observe(el); });
 })();

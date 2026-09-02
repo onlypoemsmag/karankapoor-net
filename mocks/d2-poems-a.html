@@ -14,7 +14,6 @@
   font-size:clamp(2.8rem,8vw,6rem);line-height:1;letter-spacing:.01em;
   font-variation-settings:'opsz' 144;
 }
-.band .note{margin-top:1rem;font-style:italic;font-size:1.1rem}
 
 /* the ledger */
 .ledger{padding-block:clamp(3rem,6vw,5rem)}
@@ -22,15 +21,17 @@
 .poemlist li{border-bottom:1px solid var(--rule)}
 .rowlink{
   display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:1.5rem;
-  padding:1.35rem .9rem;text-decoration:none;color:var(--ink);
-  transition:transform .18s, background-color .18s;
+  padding:1.35rem .35rem;text-decoration:none;color:var(--ink);
 }
-a.rowlink:hover{background:var(--yellow);transform:translateX(6px)}
 .rowlink .ptitle{
   font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.1rem,2.2vw,1.5rem);
-  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;
+  text-transform:uppercase;letter-spacing:.02em;line-height:1.3;display:inline;
+  background-image:linear-gradient(var(--yellow),var(--yellow));
+  background-repeat:no-repeat;background-size:0% .13em;background-position:0 96%;
+  transition:background-size .3s cubic-bezier(.2,.8,.2,1);
 }
-.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap}
+a.rowlink:hover .ptitle{background-size:100% .13em}
+.rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap;transition:color .22s}
 a.rowlink .venue::after{content:" ↗";font-style:normal;font-size:.85em}
 a.rowlink:hover .venue{color:var(--ink)}
 div.rowlink .venue::after{content:""}
@@ -56,8 +57,7 @@ div.rowlink .venue::after{content:""}
     </nav>
   </header>
   <div class="wrap titlebox">
-    <h1>Selected Poetry</h1>
-    <p class="note">Titles link to the poems where they live online.</p>
+    <h1>Selected Poems</h1>
   </div>
 </div>
 
@@ -90,12 +90,19 @@ div.rowlink .venue::after{content:""}
 
 <footer class="site-foot on-dark">
   <div class="wrap row">
-    <a class="mail" href="mailto:karan@onlypoems.com">karan@onlypoems.com</a>
+    <p class="place">Toronto, Canada</p>
     <div class="links">
-      <a href="https://onlypoems.com/">Only Poems</a>
-      <a href="https://www.strangepilgrims.com/">Strange Pilgrims</a>
-      <a href="https://www.instagram.com/whyareyounotreading/">Instagram</a>
-      <a href="https://substack.com/@poetkarankapoor">Substack</a>
+      <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
+        <svg viewBox="0 0 34 26" width="26" height="20" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+      </a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="mono">OP</span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="mono">SP</span></a>
+      <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
+        <svg viewBox="0 0 24 24" width="17" height="19" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+      </a>
     </div>
   </div>
 </footer>

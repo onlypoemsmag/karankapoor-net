@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>D2 Photographs — Variant A (The Wall) · Karan Kapoor</title>
+<title>D2 Photographs — The Wall · Karan Kapoor</title>
 <link rel="stylesheet" href="d2.css">
 <style>
 .band{background:var(--yellow);color:var(--ink)}
@@ -14,30 +14,33 @@
 .epigraph cite{display:block;margin-top:.5rem;font-style:normal;font-family:'Fraunces',Georgia,serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .grid{columns:3 18rem;gap:1.6rem;padding-bottom:clamp(3rem,6vw,5rem)}
 .ph{break-inside:avoid;margin-bottom:1.6rem}
-.ph a{display:block;transition:transform .18s, box-shadow .18s}
-.ph a:hover{transform:translateY(-4px);box-shadow:var(--lift-shadow)}
-.ph img{width:100%}
+.ph a{display:block;overflow:hidden;border-radius:var(--r)}
+.ph img{width:100%;border-radius:var(--r);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ph a:hover img{transform:scale(1.045)}
 .ph figcaption{margin-top:.55rem;font-style:italic;font-size:.95rem;color:var(--muted)}
 
-/* lightbox */
+/* ---------- lightbox: blurred page behind, swipe + circular arrows ---------- */
 .lb[hidden]{display:none}
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:50;display:flex;align-items:center;justify-content:center}
-.lb figure{max-width:min(92vw,1200px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:.8rem}
-.lb img{max-width:100%;max-height:84vh;width:auto;height:auto;object-fit:contain}
-.lb figcaption{color:var(--yellow);font-style:italic;font-size:1.05rem}
-.lb button{
-  position:absolute;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;padding:1rem;
-  font-family:'Fraunces',Georgia,serif;transition:transform .18s,color .18s;
+.lb{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
+  background:rgba(20,18,22,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.lb figure{max-width:min(90vw,1100px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:.85rem;touch-action:pan-y}
+.lb img{max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.lb figcaption{color:#fff;font-style:italic;font-size:1.08rem}
+.lb .lb-btn{
+  position:absolute;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.1);color:#fff;cursor:pointer;display:grid;place-items:center;
+  font-size:1.15rem;line-height:1;font-family:'Fraunces',Georgia,serif;
+  transition:transform .26s cubic-bezier(.2,.85,.25,1), background-color .26s, color .26s;
 }
-.lb button:hover{color:var(--yellow);transform:translateY(-2px)}
-.lb button:focus-visible{outline:2px solid var(--yellow)}
-.lb-close{top:.6rem;right:1rem}
-.lb-prev{left:1rem;top:50%;transform:translateY(-50%)}
-.lb-next{right:1rem;top:50%;transform:translateY(-50%)}
-.lb-prev:hover{transform:translateY(-50%) translateX(-3px)}
-.lb-next:hover{transform:translateY(-50%) translateX(3px)}
-
-@media (max-width:620px){.site-head{flex-direction:column;gap:1rem;align-items:flex-start}}
+.lb .lb-btn span{display:block;transition:transform .26s cubic-bezier(.2,.85,.25,1)}
+.lb .lb-btn:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow);transform:scale(1.07)}
+.lb .lb-btn:hover span{transform:scale(1.3)}
+.lb .lb-btn:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+.lb-close{top:1rem;right:1rem}
+.lb-prev{left:1rem;top:50%;margin-top:-23px}
+.lb-next{right:1rem;top:50%;margin-top:-23px}
+@media (max-width:560px){.site-head{flex-direction:column;gap:1rem;align-items:flex-start}
+  .lb-prev{left:.4rem}.lb-next{right:.4rem}}
 </style>
 </head>
 <body>
@@ -60,229 +63,229 @@
     <cite>―Sivi le poète</cite>
   </div>
   <div class="grid">
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/solitude-1600.jpg" class="phlink" data-title="Solitude">
     <img src="photos/solitude-700.jpg" alt="Solitude" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Solitude</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/mischief-1600.jpg" class="phlink" data-title="Mischief">
     <img src="photos/mischief-700.jpg" alt="Mischief" width="700" height="521" loading="lazy">
   </a>
   <figcaption>Mischief</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/repose-1600.jpg" class="phlink" data-title="Repose">
     <img src="photos/repose-700.jpg" alt="Repose" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Repose</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/collision-1600.jpg" class="phlink" data-title="Collision">
     <img src="photos/collision-700.jpg" alt="Collision" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Collision</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/passion-1600.jpg" class="phlink" data-title="Passion">
     <img src="photos/passion-700.jpg" alt="Passion" width="700" height="485" loading="lazy">
   </a>
   <figcaption>Passion</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/the-hand-of-rodin-1600.jpg" class="phlink" data-title="The Hand of Rodin">
     <img src="photos/the-hand-of-rodin-700.jpg" alt="The Hand of Rodin" width="700" height="478" loading="lazy">
   </a>
   <figcaption>The Hand of Rodin</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/self-portrait-van-gogh-1600.jpg" class="phlink" data-title="Self-portrait, van Gogh">
     <img src="photos/self-portrait-van-gogh-700.jpg" alt="Self-portrait, van Gogh" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Self-portrait, van Gogh</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/platonic-self-1600.jpg" class="phlink" data-title="Platonic Self">
     <img src="photos/platonic-self-700.jpg" alt="Platonic Self" width="612" height="700" loading="lazy">
   </a>
   <figcaption>Platonic Self</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/melancholia-vvg-1600.jpg" class="phlink" data-title="Melancholia (VvG)">
     <img src="photos/melancholia-vvg-700.jpg" alt="Melancholia (VvG)" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Melancholia (VvG)</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/roses-for-you-vvg-1600.jpg" class="phlink" data-title="Roses for you (VvG)">
     <img src="photos/roses-for-you-vvg-700.jpg" alt="Roses for you (VvG)" width="700" height="532" loading="lazy">
   </a>
   <figcaption>Roses for you (VvG)</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/ground-swell-edward-hopper-1600.jpg" class="phlink" data-title="Ground Swell, Edward Hopper">
     <img src="photos/ground-swell-edward-hopper-700.jpg" alt="Ground Swell, Edward Hopper" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Ground Swell, Edward Hopper</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/blooming-1600.jpg" class="phlink" data-title="Blooming">
     <img src="photos/blooming-700.jpg" alt="Blooming" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Blooming</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/marble-veil-1600.jpg" class="phlink" data-title="Marble-veil">
     <img src="photos/marble-veil-700.jpg" alt="Marble-veil" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Marble-veil</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/age-of-bronze-rodin-1600.jpg" class="phlink" data-title="Age of Bronze, Rodin">
     <img src="photos/age-of-bronze-rodin-700.jpg" alt="Age of Bronze, Rodin" width="517" height="700" loading="lazy">
   </a>
   <figcaption>Age of Bronze, Rodin</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/nightsky-with-exit-wounds-1600.jpg" class="phlink" data-title="Nightsky with Exit Wounds">
     <img src="photos/nightsky-with-exit-wounds-700.jpg" alt="Nightsky with Exit Wounds" width="480" height="700" loading="lazy">
   </a>
   <figcaption>Nightsky with Exit Wounds</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/decay-1600.jpg" class="phlink" data-title="Decay">
     <img src="photos/decay-700.jpg" alt="Decay" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Decay</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/shame-1600.jpg" class="phlink" data-title="Shame">
     <img src="photos/shame-700.jpg" alt="Shame" width="700" height="574" loading="lazy">
   </a>
   <figcaption>Shame</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/machine-1600.jpg" class="phlink" data-title="Machine">
     <img src="photos/machine-700.jpg" alt="Machine" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Machine</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/lost-1600.jpg" class="phlink" data-title="Lost">
     <img src="photos/lost-700.jpg" alt="Lost" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Lost</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/ruinous-1600.jpg" class="phlink" data-title="Ruinous">
     <img src="photos/ruinous-700.jpg" alt="Ruinous" width="700" height="451" loading="lazy">
   </a>
   <figcaption>Ruinous</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/fall-1600.jpg" class="phlink" data-title="Fall">
     <img src="photos/fall-700.jpg" alt="Fall" width="700" height="542" loading="lazy">
   </a>
   <figcaption>Fall</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/still-lost-1600.jpg" class="phlink" data-title="Still lost">
     <img src="photos/still-lost-700.jpg" alt="Still lost" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Still lost</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/kissing-the-star-1600.jpg" class="phlink" data-title="Kissing the star">
     <img src="photos/kissing-the-star-700.jpg" alt="Kissing the star" width="700" height="401" loading="lazy">
   </a>
   <figcaption>Kissing the star</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/disappear-1600.jpg" class="phlink" data-title="Disappear">
     <img src="photos/disappear-700.jpg" alt="Disappear" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Disappear</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/caged-1600.jpg" class="phlink" data-title="Caged">
     <img src="photos/caged-700.jpg" alt="Caged" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Caged</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/study-in-color-1600.jpg" class="phlink" data-title="Study in color">
     <img src="photos/study-in-color-700.jpg" alt="Study in color" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Study in color</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/reaching-for-the-moon-1600.jpg" class="phlink" data-title="Reaching for the moon">
     <img src="photos/reaching-for-the-moon-700.jpg" alt="Reaching for the moon" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Reaching for the moon</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/sky-on-fire-1600.jpg" class="phlink" data-title="Sky on fire">
     <img src="photos/sky-on-fire-700.jpg" alt="Sky on fire" width="700" height="393" loading="lazy">
   </a>
   <figcaption>Sky on fire</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/under-the-lights-1600.jpg" class="phlink" data-title="Under the lights">
     <img src="photos/under-the-lights-700.jpg" alt="Under the lights" width="700" height="525" loading="lazy">
   </a>
   <figcaption>Under the lights</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/beloved-1600.jpg" class="phlink" data-title="Beloved">
     <img src="photos/beloved-700.jpg" alt="Beloved" width="519" height="700" loading="lazy">
   </a>
   <figcaption>Beloved</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/beloved-s-halo-1600.jpg" class="phlink" data-title="Beloved’s halo">
     <img src="photos/beloved-s-halo-700.jpg" alt="Beloved’s halo" width="700" height="613" loading="lazy">
   </a>
   <figcaption>Beloved’s halo</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/beloved-s-colors-1600.jpg" class="phlink" data-title="Beloved’s colors">
     <img src="photos/beloved-s-colors-700.jpg" alt="Beloved’s colors" width="700" height="626" loading="lazy">
   </a>
   <figcaption>Beloved’s colors</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/sink-1600.jpg" class="phlink" data-title="Sink">
     <img src="photos/sink-700.jpg" alt="Sink" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Sink</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/elementary-my-dear-1600.jpg" class="phlink" data-title="Elementary, my dear">
     <img src="photos/elementary-my-dear-700.jpg" alt="Elementary, my dear" width="482" height="700" loading="lazy">
   </a>
   <figcaption>Elementary, my dear</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/lovers-1600.jpg" class="phlink" data-title="Lovers">
     <img src="photos/lovers-700.jpg" alt="Lovers" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Lovers</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/composition-1600.jpg" class="phlink" data-title="Composition">
     <img src="photos/composition-700.jpg" alt="Composition" width="425" height="700" loading="lazy">
   </a>
   <figcaption>Composition</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/cloudfield-1600.jpg" class="phlink" data-title="Cloudfield">
     <img src="photos/cloudfield-700.jpg" alt="Cloudfield" width="393" height="700" loading="lazy">
   </a>
   <figcaption>Cloudfield</figcaption>
 </figure>
-<figure class="ph ">
+<figure class="ph">
   <a href="photos/the-lights-1600.jpg" class="phlink" data-title="The Lights">
     <img src="photos/the-lights-700.jpg" alt="The Lights" width="393" height="700" loading="lazy">
   </a>
@@ -292,33 +295,43 @@
 </main>
 <footer class="site-foot on-dark">
   <div class="wrap row">
-    <a class="mail" href="mailto:karan@onlypoems.com">karan@onlypoems.com</a>
+    <p class="place">Toronto, Canada</p>
     <div class="links">
-      <a href="https://onlypoems.com/">Only Poems</a>
-      <a href="https://www.strangepilgrims.com/">Strange Pilgrims</a>
-      <a href="https://www.instagram.com/whyareyounotreading/">Instagram</a>
-      <a href="https://substack.com/@poetkarankapoor">Substack</a>
+      <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
+        <svg viewBox="0 0 34 26" width="26" height="20" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
+      </a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="mono">OP</span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="mono">SP</span></a>
+      <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
+        <svg viewBox="0 0 24 24" width="17" height="19" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
+      </a>
     </div>
   </div>
 </footer>
-<div class="lb" id="lb" hidden>
-  <button class="lb-close" aria-label="Close">×</button>
-  <button class="lb-prev" aria-label="Previous">←</button>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photograph viewer">
+  <button class="lb-btn lb-close" aria-label="Close"><span>✕</span></button>
+  <button class="lb-btn lb-prev" aria-label="Previous photograph"><span>←</span></button>
   <figure><img alt=""><figcaption></figcaption></figure>
-  <button class="lb-next" aria-label="Next">→</button>
+  <button class="lb-btn lb-next" aria-label="Next photograph"><span>→</span></button>
 </div>
+
 <script src="vendor/lenis.min.js"></script>
 <script src="d2.js"></script>
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.phlink'));
-  var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption'), idx=-1;
+  var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
+  var idx=-1, lastFocus=null;
   function show(i){
     idx=(i+links.length)%links.length;
     img.src=links[idx].href; img.alt=links[idx].dataset.title; cap.textContent=links[idx].dataset.title;
-    lb.hidden=false; document.body.style.overflow='hidden'; lb.querySelector('.lb-close').focus();
+    if(lb.hidden){ lastFocus=document.activeElement; lb.hidden=false; document.body.style.overflow='hidden'; lb.querySelector('.lb-close').focus(); }
   }
-  function hide(){lb.hidden=true;document.body.style.overflow='';}
+  function hide(){ lb.hidden=true; document.body.style.overflow=''; if(lastFocus)lastFocus.focus(); }
   links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();show(i);});});
   lb.querySelector('.lb-close').addEventListener('click',hide);
   lb.querySelector('.lb-prev').addEventListener('click',function(){show(idx-1);});
@@ -330,6 +343,14 @@
     if(e.key==='ArrowLeft')show(idx-1);
     if(e.key==='ArrowRight')show(idx+1);
   });
+  // swipe
+  var x0=null;
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>40) show(dx<0? idx+1 : idx-1);
+  },{passive:true});
 })();
 </script>
 </body>
