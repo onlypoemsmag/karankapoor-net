@@ -152,13 +152,31 @@ blockquote.blurb cite::before{content:"— "}
 .ph a:hover img{transform:scale(1.045)}
 .ph figcaption{margin-top:.55rem;font-style:italic;font-size:.95rem;color:var(--muted)}
 
-/* ---------- lightbox: blurred page behind, swipe + circular arrows ---------- */
+/* ---------- lightbox: blurred page, tilt + directional flip (ported from op-poets.js) ---------- */
 .lb[hidden]{display:none}
 .lb{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
   background:rgba(20,18,22,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.lb figure{max-width:min(90vw,1100px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:.85rem;touch-action:pan-y}
-.lb img{max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.lb figure{max-width:min(90vw,1000px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:.85rem;touch-action:pan-y}
+.flipwrap{perspective:1600px;perspective-origin:50% 42%;cursor:pointer}
+.cardtilt{transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.flipper{position:relative;transform-style:preserve-3d}
+.face{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px}
+.lb img{max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45);display:block}
+.gloss{position:absolute;inset:0;border-radius:10px;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%) no-repeat;
+  background-size:240% 100%;background-position:125% 0}
+.lb .back{position:absolute;inset:0;transform:rotateY(180deg);
+  background:var(--ink);color:var(--paper);border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.45);
+  display:flex;flex-direction:column;justify-content:center;gap:1.1rem;
+  padding:clamp(1.4rem,6%,2.6rem);overflow:hidden}
+.flipper.landed .back{overflow:auto;pointer-events:auto}
+.flipper.landed .face.front{pointer-events:none}
+.lb .back .btitle{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--yellow);font-size:1.3rem}
+.lb .back .bpoem{font-style:italic;font-size:1.05rem;line-height:1.75}
+.lb .back .bpoem span{display:block}
+.lb .back .bnote{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-inv);font-family:'Fraunces',Georgia,serif}
 .lb figcaption{color:#fff;font-style:italic;font-size:1.08rem}
+.lb .hint{color:rgba(255,255,255,.55);font-size:.82rem;font-style:italic;margin-top:-.3rem}
 .lb .lb-btn{
   position:absolute;width:38px;height:38px;border-radius:999px;border:1px solid rgba(255,255,255,.28);
   background:rgba(255,255,255,.08);color:#fff;cursor:pointer;display:grid;place-items:center;
@@ -171,11 +189,7 @@ blockquote.blurb cite::before{content:"— "}
 .lb-close{top:1rem;right:1rem}
 .lb-prev{left:1rem;top:50%;margin-top:-19px}
 .lb-next{right:1rem;top:50%;margin-top:-19px}
-/* open animation: backdrop fades, figure rises from the clicked thumbnail */
-.lb{opacity:1;transition:opacity .38s ease}
-.lb.closing,.lb.opening{opacity:0}
-.lb figure{transition:transform .55s cubic-bezier(.2,.8,.2,1), opacity .45s ease}
-.lb.from-origin figure{transition:none}
+@media (prefers-reduced-motion:reduce){.cardtilt{transition:none}}
 @media (max-width:560px){.site-head{flex-direction:column;gap:1rem;align-items:flex-start}
   .lb-prev{left:.4rem}.lb-next{right:.4rem}}
 </style>
@@ -452,7 +466,22 @@ blockquote.blurb cite::before{content:"— "}
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photograph viewer">
   <button class="lb-btn lb-close" aria-label="Close"><svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 2.5l11 11M13.5 2.5l-11 11"/></svg></button>
   <button class="lb-btn lb-prev" aria-label="Previous photograph"><svg viewBox="0 0 10 18" width="9" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5L1.5 9l7 7.5"/></svg></button>
-  <figure><img alt=""><figcaption></figcaption></figure>
+  <figure>
+    <div class="flipwrap" role="button" tabindex="0" aria-pressed="false" aria-label="Turn the photograph over to read the poem behind it">
+      <div class="cardtilt">
+        <div class="flipper">
+          <div class="face front"><img alt=""><div class="gloss"></div></div>
+          <div class="face back">
+            <p class="btitle"></p>
+            <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
+            <p class="bnote">placeholder poem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figcaption></figcaption>
+    <p class="hint">click the photograph to turn it over</p>
+  </figure>
   <button class="lb-btn lb-next" aria-label="Next photograph"><svg viewBox="0 0 10 18" width="9" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L8.5 9l-7 7.5"/></svg></button>
 </div>
 
@@ -515,34 +544,85 @@ blockquote.blurb cite::before{content:"— "}
 (function(){
   var links=[].slice.call(document.querySelectorAll('.phlink'));
   var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
-  var idx=-1, lastFocus=null;
-  var fig=lb.querySelector('figure');
+  var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle');
+  var flipwrap=lb.querySelector('.flipwrap'), cardtilt=lb.querySelector('.cardtilt'),
+      flipper=lb.querySelector('.flipper'), gloss=lb.querySelector('.gloss');
   var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var idx=-1, lastFocus=null;
+
+  /* ---- the turn (op-poets.js port): yaw eased per-frame, direction from where you push ---- */
+  var yaw=0, spinning=false, tFrom=0, tTo=0, tStart=0, faceBack=false;
+  var TURN_MS = reduced ? 1 : 620;
+  function easeInOut(k){ return k<.5 ? 4*k*k*k : 1-Math.pow(-2*k+2,3)/2; }
+  function paint(){
+    flipper.style.transform='rotateY('+yaw.toFixed(2)+'deg)';
+    var a=((yaw%360)+360)%360;
+    gloss.style.backgroundPosition=(125-(a/180)*170)+'% 0';
+  }
+  function spin(now){
+    var k=Math.min(1,(now-tStart)/TURN_MS);
+    yaw=tFrom+(tTo-tFrom)*easeInOut(k);
+    paint();
+    if(k>=1){ spinning=false; flipper.classList.toggle('landed',faceBack); flipwrap.setAttribute('aria-pressed',faceBack); return; }
+    flipper.classList.remove('landed');
+    requestAnimationFrame(spin);
+  }
+  function side(e){
+    if(!e||e.clientX==null) return 1;
+    var r=flipwrap.getBoundingClientRect();
+    return e.clientX < r.left+r.width/2 ? -1 : 1;
+  }
+  function turn(dir){
+    if(spinning) return;
+    tFrom=yaw; tTo=yaw+180*(dir<0?-1:1);
+    faceBack=!faceBack;
+    tStart=performance.now(); spinning=true;
+    requestAnimationFrame(spin);
+  }
+  function faceFront(){ spinning=false; yaw=tFrom=tTo=0; faceBack=false; flipper.classList.remove('landed'); flipwrap.setAttribute('aria-pressed','false'); paint(); }
+  flipwrap.addEventListener('click',function(e){ turn(side(e)); });
+  flipwrap.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();turn(1);} });
+
+  /* ---- the lean (mouse only; letting go puts the card back flat) ---- */
+  function untilt(){ cardtilt.style.transform='none'; }
+  flipwrap.addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse'||reduced) return;
+    var r=flipwrap.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+    cardtilt.style.transform='rotateX('+(-(y-.5)*13.6).toFixed(2)+'deg) rotateY('+((x-.5)*16).toFixed(2)+'deg)';
+  });
+  flipwrap.addEventListener('pointerleave',untilt);
+  flipwrap.addEventListener('pointerup',untilt);
+  flipwrap.addEventListener('pointercancel',untilt);
+
+  /* ---- open/close: the card grows out of the tile you clicked ---- */
+  var EASE='cubic-bezier(.19,.86,.24,1)';
+  function playOpen(fromEl){
+    if(reduced||!fig.animate||!fromEl) return;
+    var D=520;
+    var to=fig.getBoundingClientRect();
+    var r=fromEl.getBoundingClientRect();
+    var sc=Math.max(0.08,r.width/to.width);
+    var dx=(r.left+r.width/2)-(to.left+to.width/2);
+    var dy=(r.top+r.height/2)-(to.top+to.height/2);
+    fig.animate([
+      {transform:'translate('+dx+'px,'+dy+'px) scale('+sc+')',opacity:.45},
+      {transform:'none',opacity:1}
+    ],{duration:D,easing:EASE});
+    lb.animate([{opacity:0},{opacity:1}],{duration:Math.round(D*.75),easing:'ease-out'});
+  }
   function show(i, originEl){
     idx=(i+links.length)%links.length;
-    img.src=links[idx].querySelector('img').src; img.alt=links[idx].dataset.title; cap.textContent=links[idx].dataset.title;
+    img.src=links[idx].querySelector('img').src; img.alt=links[idx].dataset.title;
+    cap.textContent=links[idx].dataset.title; btitle.textContent=links[idx].dataset.title;
+    faceFront();
     if(lb.hidden){
       lastFocus=document.activeElement; lb.hidden=false; document.body.style.overflow='hidden';
-      if(originEl && !reduced){
-        var r=originEl.getBoundingClientRect();
-        var sx=r.width/Math.min(innerWidth*.9,1100);
-        var dx=(r.left+r.width/2)-innerWidth/2;
-        var dy=(r.top+r.height/2)-innerHeight/2;
-        lb.classList.add('from-origin');
-        fig.style.transform='translate('+dx+'px,'+dy+'px) scale('+Math.max(.15,sx)+')';
-        fig.style.opacity='0';
-        lb.style.opacity='0';
-        requestAnimationFrame(function(){requestAnimationFrame(function(){
-          lb.classList.remove('from-origin');
-          lb.style.opacity='';
-          fig.style.transform='translate(0,0) scale(1)';
-          fig.style.opacity='1';
-        });});
-      }
+      playOpen(originEl);
       lb.querySelector('.lb-close').focus();
     }
   }
-  function hide(){ lb.hidden=true; document.body.style.overflow=''; fig.style.transform=''; fig.style.opacity=''; if(lastFocus)lastFocus.focus(); }
+  function hide(){ lb.hidden=true; document.body.style.overflow=''; faceFront(); untilt(); if(lastFocus)lastFocus.focus(); }
   links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();show(i,a);});});
   lb.querySelector('.lb-close').addEventListener('click',hide);
   lb.querySelector('.lb-prev').addEventListener('click',function(){show(idx-1);});
@@ -554,7 +634,6 @@ blockquote.blurb cite::before{content:"— "}
     if(e.key==='ArrowLeft')show(idx-1);
     if(e.key==='ArrowRight')show(idx+1);
   });
-  // swipe
   var x0=null;
   lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
   lb.addEventListener('touchend',function(e){
