@@ -1,0 +1,990 @@
+[
+ {
+  "slug": "solitude",
+  "title": "Solitude",
+  "files": {
+   "2000": {
+    "file": "assets/photos/solitude-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/solitude-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/solitude-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/solitude-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "mischief",
+  "title": "Mischief",
+  "files": {
+   "2000": {
+    "file": "assets/photos/mischief-2000.webp",
+    "w": 2000,
+    "h": 1488
+   },
+   "1200": {
+    "file": "assets/photos/mischief-1200.webp",
+    "w": 1200,
+    "h": 893
+   },
+   "700": {
+    "file": "assets/photos/mischief-700.webp",
+    "w": 700,
+    "h": 521
+   },
+   "jpg": {
+    "file": "assets/photos/mischief-1200.jpg",
+    "w": 1200,
+    "h": 893
+   }
+  }
+ },
+ {
+  "slug": "repose",
+  "title": "Repose",
+  "files": {
+   "2000": {
+    "file": "assets/photos/repose-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/repose-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/repose-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/repose-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "collision",
+  "title": "Collision",
+  "files": {
+   "2000": {
+    "file": "assets/photos/collision-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/collision-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/collision-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/collision-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "passion",
+  "title": "Passion",
+  "files": {
+   "2000": {
+    "file": "assets/photos/passion-2000.webp",
+    "w": 2000,
+    "h": 1386
+   },
+   "1200": {
+    "file": "assets/photos/passion-1200.webp",
+    "w": 1200,
+    "h": 831
+   },
+   "700": {
+    "file": "assets/photos/passion-700.webp",
+    "w": 700,
+    "h": 485
+   },
+   "jpg": {
+    "file": "assets/photos/passion-1200.jpg",
+    "w": 1200,
+    "h": 831
+   }
+  }
+ },
+ {
+  "slug": "the-hand-of-rodin",
+  "title": "The Hand of Rodin",
+  "files": {
+   "2000": {
+    "file": "assets/photos/the-hand-of-rodin-2000.webp",
+    "w": 2000,
+    "h": 1366
+   },
+   "1200": {
+    "file": "assets/photos/the-hand-of-rodin-1200.webp",
+    "w": 1200,
+    "h": 820
+   },
+   "700": {
+    "file": "assets/photos/the-hand-of-rodin-700.webp",
+    "w": 700,
+    "h": 478
+   },
+   "jpg": {
+    "file": "assets/photos/the-hand-of-rodin-1200.jpg",
+    "w": 1200,
+    "h": 820
+   }
+  }
+ },
+ {
+  "slug": "self-portrait-van-gogh",
+  "title": "Self-portrait, van Gogh",
+  "files": {
+   "2000": {
+    "file": "assets/photos/self-portrait-van-gogh-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/self-portrait-van-gogh-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/self-portrait-van-gogh-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/self-portrait-van-gogh-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "platonic-self",
+  "title": "Platonic Self",
+  "files": {
+   "2000": {
+    "file": "assets/photos/platonic-self-2000.webp",
+    "w": 916,
+    "h": 1048
+   },
+   "1200": {
+    "file": "assets/photos/platonic-self-1200.webp",
+    "w": 916,
+    "h": 1048
+   },
+   "700": {
+    "file": "assets/photos/platonic-self-700.webp",
+    "w": 612,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/platonic-self-1200.jpg",
+    "w": 916,
+    "h": 1048
+   }
+  }
+ },
+ {
+  "slug": "melancholia-vvg",
+  "title": "Melancholia (VvG)",
+  "files": {
+   "2000": {
+    "file": "assets/photos/melancholia-vvg-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/melancholia-vvg-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/melancholia-vvg-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/melancholia-vvg-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "roses-for-you-vvg",
+  "title": "Roses for you (VvG)",
+  "files": {
+   "2000": {
+    "file": "assets/photos/roses-for-you-vvg-2000.webp",
+    "w": 2000,
+    "h": 1520
+   },
+   "1200": {
+    "file": "assets/photos/roses-for-you-vvg-1200.webp",
+    "w": 1200,
+    "h": 912
+   },
+   "700": {
+    "file": "assets/photos/roses-for-you-vvg-700.webp",
+    "w": 700,
+    "h": 532
+   },
+   "jpg": {
+    "file": "assets/photos/roses-for-you-vvg-1200.jpg",
+    "w": 1200,
+    "h": 912
+   }
+  }
+ },
+ {
+  "slug": "ground-swell-edward-hopper",
+  "title": "Ground Swell, Edward Hopper",
+  "files": {
+   "2000": {
+    "file": "assets/photos/ground-swell-edward-hopper-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/ground-swell-edward-hopper-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/ground-swell-edward-hopper-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/ground-swell-edward-hopper-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "blooming",
+  "title": "Blooming",
+  "files": {
+   "2000": {
+    "file": "assets/photos/blooming-2000.webp",
+    "w": 1024,
+    "h": 576
+   },
+   "1200": {
+    "file": "assets/photos/blooming-1200.webp",
+    "w": 1024,
+    "h": 576
+   },
+   "700": {
+    "file": "assets/photos/blooming-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/blooming-1200.jpg",
+    "w": 1024,
+    "h": 576
+   }
+  }
+ },
+ {
+  "slug": "marble-veil",
+  "title": "Marble-veil",
+  "files": {
+   "2000": {
+    "file": "assets/photos/marble-veil-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/marble-veil-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/marble-veil-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/marble-veil-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "age-of-bronze-rodin",
+  "title": "Age of Bronze, Rodin",
+  "files": {
+   "2000": {
+    "file": "assets/photos/age-of-bronze-rodin-2000.webp",
+    "w": 1477,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/age-of-bronze-rodin-1200.webp",
+    "w": 886,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/age-of-bronze-rodin-700.webp",
+    "w": 517,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/age-of-bronze-rodin-1200.jpg",
+    "w": 886,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "nightsky-with-exit-wounds",
+  "title": "Nightsky with Exit Wounds",
+  "files": {
+   "2000": {
+    "file": "assets/photos/nightsky-with-exit-wounds-2000.webp",
+    "w": 1372,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/nightsky-with-exit-wounds-1200.webp",
+    "w": 823,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/nightsky-with-exit-wounds-700.webp",
+    "w": 480,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/nightsky-with-exit-wounds-1200.jpg",
+    "w": 823,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "decay",
+  "title": "Decay",
+  "files": {
+   "2000": {
+    "file": "assets/photos/decay-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/decay-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/decay-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/decay-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "shame",
+  "title": "Shame",
+  "files": {
+   "2000": {
+    "file": "assets/photos/shame-2000.webp",
+    "w": 2000,
+    "h": 1641
+   },
+   "1200": {
+    "file": "assets/photos/shame-1200.webp",
+    "w": 1200,
+    "h": 984
+   },
+   "700": {
+    "file": "assets/photos/shame-700.webp",
+    "w": 700,
+    "h": 574
+   },
+   "jpg": {
+    "file": "assets/photos/shame-1200.jpg",
+    "w": 1200,
+    "h": 984
+   }
+  }
+ },
+ {
+  "slug": "machine",
+  "title": "Machine",
+  "files": {
+   "2000": {
+    "file": "assets/photos/machine-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/machine-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/machine-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/machine-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "lost",
+  "title": "Lost",
+  "files": {
+   "2000": {
+    "file": "assets/photos/lost-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/lost-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/lost-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/lost-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "ruinous",
+  "title": "Ruinous",
+  "files": {
+   "2000": {
+    "file": "assets/photos/ruinous-2000.webp",
+    "w": 2000,
+    "h": 1290
+   },
+   "1200": {
+    "file": "assets/photos/ruinous-1200.webp",
+    "w": 1200,
+    "h": 774
+   },
+   "700": {
+    "file": "assets/photos/ruinous-700.webp",
+    "w": 700,
+    "h": 451
+   },
+   "jpg": {
+    "file": "assets/photos/ruinous-1200.jpg",
+    "w": 1200,
+    "h": 774
+   }
+  }
+ },
+ {
+  "slug": "fall",
+  "title": "Fall",
+  "files": {
+   "2000": {
+    "file": "assets/photos/fall-2000.webp",
+    "w": 2000,
+    "h": 1549
+   },
+   "1200": {
+    "file": "assets/photos/fall-1200.webp",
+    "w": 1200,
+    "h": 929
+   },
+   "700": {
+    "file": "assets/photos/fall-700.webp",
+    "w": 700,
+    "h": 542
+   },
+   "jpg": {
+    "file": "assets/photos/fall-1200.jpg",
+    "w": 1200,
+    "h": 929
+   }
+  }
+ },
+ {
+  "slug": "still-lost",
+  "title": "Still lost",
+  "files": {
+   "2000": {
+    "file": "assets/photos/still-lost-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/still-lost-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/still-lost-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/still-lost-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "kissing-the-star",
+  "title": "Kissing the star",
+  "files": {
+   "2000": {
+    "file": "assets/photos/kissing-the-star-2000.webp",
+    "w": 2000,
+    "h": 1147
+   },
+   "1200": {
+    "file": "assets/photos/kissing-the-star-1200.webp",
+    "w": 1200,
+    "h": 688
+   },
+   "700": {
+    "file": "assets/photos/kissing-the-star-700.webp",
+    "w": 700,
+    "h": 401
+   },
+   "jpg": {
+    "file": "assets/photos/kissing-the-star-1200.jpg",
+    "w": 1200,
+    "h": 688
+   }
+  }
+ },
+ {
+  "slug": "disappear",
+  "title": "Disappear",
+  "files": {
+   "2000": {
+    "file": "assets/photos/disappear-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/disappear-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/disappear-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/disappear-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "caged",
+  "title": "Caged",
+  "files": {
+   "2000": {
+    "file": "assets/photos/caged-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/caged-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/caged-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/caged-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "study-in-color",
+  "title": "Study in color",
+  "files": {
+   "2000": {
+    "file": "assets/photos/study-in-color-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/study-in-color-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/study-in-color-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/study-in-color-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "reaching-for-the-moon",
+  "title": "Reaching for the moon",
+  "files": {
+   "2000": {
+    "file": "assets/photos/reaching-for-the-moon-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/reaching-for-the-moon-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/reaching-for-the-moon-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/reaching-for-the-moon-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "sky-on-fire",
+  "title": "Sky on fire",
+  "files": {
+   "2000": {
+    "file": "assets/photos/sky-on-fire-2000.webp",
+    "w": 2000,
+    "h": 1125
+   },
+   "1200": {
+    "file": "assets/photos/sky-on-fire-1200.webp",
+    "w": 1200,
+    "h": 675
+   },
+   "700": {
+    "file": "assets/photos/sky-on-fire-700.webp",
+    "w": 700,
+    "h": 394
+   },
+   "jpg": {
+    "file": "assets/photos/sky-on-fire-1200.jpg",
+    "w": 1200,
+    "h": 675
+   }
+  }
+ },
+ {
+  "slug": "under-the-lights",
+  "title": "Under the lights",
+  "files": {
+   "2000": {
+    "file": "assets/photos/under-the-lights-2000.webp",
+    "w": 2000,
+    "h": 1500
+   },
+   "1200": {
+    "file": "assets/photos/under-the-lights-1200.webp",
+    "w": 1200,
+    "h": 900
+   },
+   "700": {
+    "file": "assets/photos/under-the-lights-700.webp",
+    "w": 700,
+    "h": 525
+   },
+   "jpg": {
+    "file": "assets/photos/under-the-lights-1200.jpg",
+    "w": 1200,
+    "h": 900
+   }
+  }
+ },
+ {
+  "slug": "beloved",
+  "title": "Beloved",
+  "files": {
+   "2000": {
+    "file": "assets/photos/beloved-2000.webp",
+    "w": 1484,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/beloved-1200.webp",
+    "w": 890,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/beloved-700.webp",
+    "w": 519,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/beloved-1200.jpg",
+    "w": 890,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "beloved-s-halo",
+  "title": "Beloved’s halo",
+  "files": {
+   "2000": {
+    "file": "assets/photos/beloved-s-halo-2000.webp",
+    "w": 2000,
+    "h": 1753
+   },
+   "1200": {
+    "file": "assets/photos/beloved-s-halo-1200.webp",
+    "w": 1200,
+    "h": 1052
+   },
+   "700": {
+    "file": "assets/photos/beloved-s-halo-700.webp",
+    "w": 700,
+    "h": 613
+   },
+   "jpg": {
+    "file": "assets/photos/beloved-s-halo-1200.jpg",
+    "w": 1200,
+    "h": 1052
+   }
+  }
+ },
+ {
+  "slug": "beloved-s-colors",
+  "title": "Beloved’s colors",
+  "files": {
+   "2000": {
+    "file": "assets/photos/beloved-s-colors-2000.webp",
+    "w": 2000,
+    "h": 1790
+   },
+   "1200": {
+    "file": "assets/photos/beloved-s-colors-1200.webp",
+    "w": 1200,
+    "h": 1074
+   },
+   "700": {
+    "file": "assets/photos/beloved-s-colors-700.webp",
+    "w": 700,
+    "h": 627
+   },
+   "jpg": {
+    "file": "assets/photos/beloved-s-colors-1200.jpg",
+    "w": 1200,
+    "h": 1074
+   }
+  }
+ },
+ {
+  "slug": "sink",
+  "title": "Sink",
+  "files": {
+   "2000": {
+    "file": "assets/photos/sink-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/sink-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/sink-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/sink-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "elementary-my-dear",
+  "title": "Elementary, my dear",
+  "files": {
+   "2000": {
+    "file": "assets/photos/elementary-my-dear-2000.webp",
+    "w": 1379,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/elementary-my-dear-1200.webp",
+    "w": 827,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/elementary-my-dear-700.webp",
+    "w": 483,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/elementary-my-dear-1200.jpg",
+    "w": 827,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "lovers",
+  "title": "Lovers",
+  "files": {
+   "2000": {
+    "file": "assets/photos/lovers-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/lovers-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/lovers-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/lovers-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "composition",
+  "title": "Composition",
+  "files": {
+   "2000": {
+    "file": "assets/photos/composition-2000.webp",
+    "w": 1214,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/composition-1200.webp",
+    "w": 728,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/composition-700.webp",
+    "w": 425,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/composition-1200.jpg",
+    "w": 728,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "cloudfield",
+  "title": "Cloudfield",
+  "files": {
+   "2000": {
+    "file": "assets/photos/cloudfield-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/cloudfield-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/cloudfield-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/cloudfield-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ },
+ {
+  "slug": "the-lights",
+  "title": "The Lights",
+  "files": {
+   "2000": {
+    "file": "assets/photos/the-lights-2000.webp",
+    "w": 1125,
+    "h": 2000
+   },
+   "1200": {
+    "file": "assets/photos/the-lights-1200.webp",
+    "w": 675,
+    "h": 1200
+   },
+   "700": {
+    "file": "assets/photos/the-lights-700.webp",
+    "w": 394,
+    "h": 700
+   },
+   "jpg": {
+    "file": "assets/photos/the-lights-1200.jpg",
+    "w": 675,
+    "h": 1200
+   }
+  }
+ }
+]

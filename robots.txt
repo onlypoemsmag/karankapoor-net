@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /mocks/
+
+Sitemap: https://www.karankapoor.net/sitemap.xml
