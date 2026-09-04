@@ -252,6 +252,49 @@ def poems():
 
 # ---------------------------------------------------------------- photographs
 
+
+# photograph slug -> (poem title or collection pick, poet)
+PAIRINGS = {
+ "solitude": ("Keeping Things Whole", "Mark Strand"),
+ "mischief": ("a poem to come", "Leigh Chadwick"),
+ "repose": ("a poem to come", "Kim Hyesoon"),
+ "collision": ("Instructions on Not Giving Up", "Ada Limón"),
+ "passion": ("from There Is an Anger That Moves", "Kei Miller"),
+ "the-hand-of-rodin": ("Palm", "Rainer Maria Rilke"),
+ "self-portrait-van-gogh": ("Self-Portrait", "Adam Zagajewski"),
+ "platonic-self": ("Self-Portrait, 1969", "Frank Bidart"),
+ "melancholia-vvg": ("Short Talk on Van Gogh", "Anne Carson"),
+ "roses-for-you-vvg": ("The White Rose", "Louise Glück"),
+ "ground-swell-edward-hopper": ("Edward Hopper Study: Hotel Room", "Victoria Chang"),
+ "blooming": ("a poem to come", "Heather Christle"),
+ "marble-veil": ("“A Charm invests a face”", "Emily Dickinson"),
+ "age-of-bronze-rodin": ("Song", "Allen Ginsberg"),
+ "nightsky-with-exit-wounds": ("After You", "Agha Shahid Ali"),
+ "decay": ("My Shoes", "Charles Simic"),
+ "shame": ("Archaic Torso of Apollo", "Rainer Maria Rilke"),
+ "machine": ("Litany in Which Certain Things Are Crossed Out", "Richard Siken"),
+ "lost": ("from Vectors", "James Richardson"),
+ "ruinous": ("Sex, Night", "Alejandra Pizarnik"),
+ "fall": ("from Fall Higher", "Dean Young"),
+ "still-lost": ("The Remains", "Mark Strand"),
+ "kissing-the-star": ("The Dark Birds", "Bert Meyers"),
+ "disappear": ("More than whispers, less than rumors", "Bob Hicok"),
+ "caged": ("The Panther", "Rainer Maria Rilke"),
+ "study-in-color": ("Meditation at Lagunitas", "Robert Hass"),
+ "reaching-for-the-moon": ("a moon poem to come", "Mary Ruefle"),
+ "sky-on-fire": ("When the Burning Begins", "Patricia Smith"),
+ "under-the-lights": ("from The Harbour Beyond the Movie", "Luke Kennard"),
+ "beloved": ("Beneath My Hands", "Leonard Cohen"),
+ "beloved-s-halo": ("While the Child Sleeps, Sonya Undresses", "Ilya Kaminsky"),
+ "beloved-s-colors": ("The Sandalwood", "Li-Young Lee"),
+ "sink": ("a poem to come", "Valzhyna Mort"),
+ "elementary-my-dear": ("from The Ninjas", "Jane Yeh"),
+ "lovers": ("How It Will End", "Denise Duhamel"),
+ "composition": ("I Ask My Mother to Sing", "Li-Young Lee"),
+ "cloudfield": ("Short Talk on the Sensation of Aeroplane Takeoff", "Anne Carson"),
+ "the-lights": ("New York Poem", "Terrance Hayes"),
+}
+
 def photographs():
     p = "../"
     photos = json.load(open(os.path.join(ROOT, "assets", "photos", "manifest.json")))
@@ -262,8 +305,9 @@ def photographs():
         w700, w1200, w2000 = f["700"], f["1200"], f["2000"]
         jpg = f["jpg"]
         srcset = f'{p}assets/photos/{ph["slug"]}-700.webp {w700["w"]}w, {p}assets/photos/{ph["slug"]}-1200.webp {w1200["w"]}w, {p}assets/photos/{ph["slug"]}-2000.webp {w2000["w"]}w'
+        poem, poet = PAIRINGS.get(ph["slug"], ("a poem to come", ""))
         figs.append(f'''<figure class="ph">
-  <a href="{p}assets/photos/{ph["slug"]}-1200.jpg" class="phlink" data-large="{p}assets/photos/{ph["slug"]}-2000.webp" data-title="{t}">
+  <a href="{p}assets/photos/{ph["slug"]}-1200.jpg" class="phlink" data-large="{p}assets/photos/{ph["slug"]}-2000.webp" data-title="{t}" data-poem="{html.escape(poem)}" data-poet="{html.escape(poet)}">
     <picture>
       <source type="image/webp" srcset="{srcset}" sizes="(max-width:640px) 92vw, (max-width:1000px) 45vw, 30vw">
       <img src="{p}assets/photos/{ph["slug"]}-1200.jpg" alt="{t}" width="{jpg["w"]}" height="{jpg["h"]}" loading="lazy">
@@ -277,7 +321,7 @@ def photographs():
 (function(){
   var links=[].slice.call(document.querySelectorAll('.phlink'));
   var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
-  var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle');
+  var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle'), bpoet=lb.querySelector('.bpoet');
   var flipwrap=lb.querySelector('.flipwrap'), cardtilt=lb.querySelector('.cardtilt'),
       flipper=lb.querySelector('.flipper'), gloss=lb.querySelector('.gloss');
   var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -353,7 +397,9 @@ def photographs():
   function show(i, originEl){
     idx=(i+links.length)%links.length;
     img.src=links[idx].dataset.large; img.alt=links[idx].dataset.title;
-    cap.textContent=links[idx].dataset.title; btitle.textContent=links[idx].dataset.title;
+    cap.textContent=links[idx].dataset.title;
+    btitle.textContent=links[idx].dataset.poem||links[idx].dataset.title;
+    bpoet.textContent=links[idx].dataset.poet?('— '+links[idx].dataset.poet):'';
     faceFront();
     if(lb.hidden){
       lastFocus=document.activeElement; lb.hidden=false; document.body.style.overflow='hidden';
@@ -422,9 +468,10 @@ def photographs():
         <div class="flipper">
           <div class="face front"><img alt=""><div class="gloss"></div></div>
           <div class="face back">
+            <p class="bkicker">Behind this photograph</p>
             <p class="btitle"></p>
-            <p class="bpoem"><span>This is placeholder text — the real</span><span>pairing of poem to photograph</span><span>comes later. For now, imagine</span><span>a stanza living behind this image,</span><span>waiting to be turned over</span><span>like a card, like a leaf, like a page.</span></p>
-            <p class="bnote">placeholder poem</p>
+            <p class="bpoet"></p>
+            <p class="bnote">poem text to come</p>
           </div>
         </div>
       </div>
