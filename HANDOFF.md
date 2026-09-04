@@ -57,14 +57,13 @@ site on GitHub Pages. Repo: https://github.com/onlypoemsmag/karankapoor-net
 - Registration: keep! Renews Jun 16 2027, ~$20/yr, auto-renew ON.
 
 ## Remaining / next steps
-1. HTTPS: wait for GitHub's cert for www.karankapoor.net, then
-   `gh api -X PUT repos/onlypoemsmag/karankapoor-net/pages -F https_enforced=true`
-   (a background loop may already have done this — check
-   `gh api repos/onlypoemsmag/karankapoor-net/pages`).
-2. Verification checklist before Karan cancels the Squarespace WEBSITE plan
-   (never the domain registration): https://www.karankapoor.net/ and
-   https://karankapoor.net/ load; /poems/ and /photographs/ and /home redirect
-   work; photos load; OG preview renders (opengraph.xyz or a Slack paste).
+1. DONE (2026-09-04): HTTPS cert issued, https_enforced=true. Full go-live
+   checklist passed: https on www + apex (apex 301→www), http→https 301,
+   /poems/, /photographs/, /home redirect, photos, OG image, sitemap all 200.
+   ⇒ It is now SAFE for Karan to cancel the Squarespace WEBSITE plan — but
+   NEVER the domain registration (keep auto-renew ON; cancelling the site plan
+   must not release the domain — confirm the domain stays active afterwards).
+2. DONE — see 1.
 3. Karan pastes cleared poem texts into content/poems/ (links in PAIRINGS.md);
    verify a few of my from-memory attributions (Chang's Hopper study, Smith's
    "When the Burning Begins", Hayes's "New York Poem", Shahid's "After You",
