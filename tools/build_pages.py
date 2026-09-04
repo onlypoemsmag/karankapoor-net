@@ -340,6 +340,16 @@ def photographs():
 
     lightbox_js = '''<script>
 (function(){
+  /* shuffle: a new hanging of the wall on every visit */
+  var grid=document.querySelector('.grid');
+  if(grid){
+    var figs=[].slice.call(grid.children);
+    for(var i=figs.length-1;i>0;i--){
+      var j=Math.floor(Math.random()*(i+1));
+      var t=figs[i]; figs[i]=figs[j]; figs[j]=t;
+    }
+    for(var k=0;k<figs.length;k++){ grid.appendChild(figs[k]); }
+  }
   var links=[].slice.call(document.querySelectorAll('.phlink'));
   var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
   var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle'), bpoet=lb.querySelector('.bpoet');
