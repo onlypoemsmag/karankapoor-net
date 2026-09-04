@@ -45,3 +45,31 @@ titles and attributions only, pending Karan's texts/permissions.
 | 36 | Composition (child at piano) | I Ask My Mother to Sing | Li-Young Lee | music passed down a family |
 | 37 | Cloudfield | Short Talk on the Sensation of Aeroplane Takeoff | Anne Carson | literal and perfect, again |
 | 38 | The Lights (tower at night) | New York Poem | Terrance Hayes | lit windows, each a life |
+
+## Where to find the texts online (verified 2026-09-04)
+
+- Keeping Things Whole — https://www.poetryfoundation.org/poems/47541/keeping-things-whole
+- Instructions on Not Giving Up — https://poets.org/poem/instructions-not-giving
+- Litany in Which Certain Things Are Crossed Out — https://www.poetryfoundation.org/poems/48158/litany-in-which-certain-things-are-crossed-out
+- Meditation at Lagunitas — https://www.poetryfoundation.org/poems/47553/meditation-at-lagunitas
+- The Panther (Jessie Lamont's 1918 translation, public domain) — https://en.wikisource.org/wiki/Poems_of_Rainer_Maria_Rilke_(1918)/The_Panther
+- Archaic Torso of Apollo (Stephen Mitchell translation) — https://poets.org/poem/archaic-torso-apollo
+- Self-Portrait (Zagajewski) — https://poets.org/poem/self-portrait
+- Self-Portrait, 1969 (Bidart) — https://www.poetryfoundation.org/poems/57107/self-portrait-1969
+- My Shoes — https://poets.org/poem/my-shoes
+- The Remains — https://www.poemhunter.com/poem/the-remains/ (no authoritative host found; text is in *The Late Hour*)
+- When the Burning Begins — https://poets.org/poem/when-burning-begins
+- I Ask My Mother to Sing — https://poets.org/poem/i-ask-my-mother-sing
+- How It Will End — https://onbeing.org/programs/denise-duhamel-how-it-will-end/ (Poetry Unbound; also *Blowout*)
+- Edward Hopper Study: Hotel Room — https://www.poetryfoundation.org/poetrymagazine/poems/42378/edward-hopper-study-hotel-room
+- Sex, Night (trans. Ferrari & Gander) — https://poems.com/poem/sex-night/ (Poetry Daily; from *The Galloping Hour*)
+- Song (Ginsberg) — https://allenginsberg.org/2014/02/song-the-weight-of-the-world-is-love/ (the estate's own site)
+- While the Child Sleeps, Sonya Undresses — https://www.ilyakaminsky.com/poems (Kaminsky's own site; from *Deaf Republic*)
+- Short Talks (incl. Van Gogh) — https://yalereview.org/article/carson-short-talks (Yale Review's official reprint)
+- The Dark Birds — in *The Dark Birds* (Doubleday, 1968); readings at https://voetica.com/poets/1116/2 — no clean text page found
+- A Charm invests a face — already live on the site (public domain, Wikisource 1891 text)
+
+Not reliably online (Karan's shelves/relationships): Cohen "Beneath My Hands" (*The Spice-Box of Earth*),
+Hicok "More than whispers, less than rumors", Agha Shahid Ali "After You" (*The Country Without a Post Office*?
+— verify source book), Glück "The White Rose" (*The Wild Iris*), Rilke "Palm" (Uncollected/late poems, trans. varies),
+Lee "The Sandalwood", Richardson *Vectors*, plus all the "your pick" collections.
