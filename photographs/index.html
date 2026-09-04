@@ -443,6 +443,16 @@
 <script type="application/json" id="poem-texts">{"marble-veil": "<span>A charm invests a face</span><span>Imperfectly beheld,—</span><span>The lady dare not lift her veil</span><span>For fear it be dispelled.</span><span class=\"stanza-gap\" aria-hidden=\"true\">&nbsp;</span><span>But peers beyond her mesh,</span><span>And wishes, and denies,—</span><span>Lest interview annul a want</span><span>That image satisfies.</span>"}</script>
 <script>
 (function(){
+  /* shuffle: a new hanging of the wall on every visit */
+  var grid=document.querySelector('.grid');
+  if(grid){
+    var figs=[].slice.call(grid.children);
+    for(var i=figs.length-1;i>0;i--){
+      var j=Math.floor(Math.random()*(i+1));
+      var t=figs[i]; figs[i]=figs[j]; figs[j]=t;
+    }
+    for(var k=0;k<figs.length;k++){ grid.appendChild(figs[k]); }
+  }
   var links=[].slice.call(document.querySelectorAll('.phlink'));
   var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
   var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle'), bpoet=lb.querySelector('.bpoet');
