@@ -295,9 +295,30 @@ PAIRINGS = {
  "the-lights": ("New York Poem", "Terrance Hayes"),
 }
 
+def poem_texts():
+    """content/poems/<slug>.txt -> HTML for the card back (lines as spans, blank line = stanza gap)."""
+    out = {}
+    d = os.path.join(ROOT, "content", "poems")
+    if not os.path.isdir(d):
+        return out
+    for fn in os.listdir(d):
+        if not fn.endswith(".txt"):
+            continue
+        slug = fn[:-4]
+        lines = open(os.path.join(d, fn)).read().strip("\n").split("\n")
+        parts = []
+        for ln in lines:
+            if ln.strip():
+                parts.append(f"<span>{html.escape(ln)}</span>")
+            else:
+                parts.append('<span class="stanza-gap" aria-hidden="true">&nbsp;</span>')
+        out[slug] = "".join(parts)
+    return out
+
 def photographs():
     p = "../"
     photos = json.load(open(os.path.join(ROOT, "assets", "photos", "manifest.json")))
+    texts = poem_texts()
     figs = []
     for ph in photos:
         t = html.escape(ph["title"])
@@ -322,6 +343,9 @@ def photographs():
   var links=[].slice.call(document.querySelectorAll('.phlink'));
   var lb=document.getElementById('lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
   var fig=lb.querySelector('figure'), btitle=lb.querySelector('.btitle'), bpoet=lb.querySelector('.bpoet');
+  var bpoem=lb.querySelector('.bpoem'), bnote=lb.querySelector('.bnote');
+  var poemTexts={};
+  try{ poemTexts=JSON.parse(document.getElementById('poem-texts').textContent); }catch(e){}
   var flipwrap=lb.querySelector('.flipwrap'), cardtilt=lb.querySelector('.cardtilt'),
       flipper=lb.querySelector('.flipper'), gloss=lb.querySelector('.gloss');
   var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -400,6 +424,9 @@ def photographs():
     cap.textContent=links[idx].dataset.title;
     btitle.textContent=links[idx].dataset.poem||links[idx].dataset.title;
     bpoet.textContent=links[idx].dataset.poet?('— '+links[idx].dataset.poet):'';
+    var slug=(links[idx].dataset.large.match(/photos\/(.+)-2000/)||[])[1];
+    if(slug && poemTexts[slug]){ bpoem.innerHTML=poemTexts[slug]; bpoem.hidden=false; bnote.hidden=true; }
+    else { bpoem.innerHTML=''; bpoem.hidden=true; bnote.hidden=false; }
     faceFront();
     if(lb.hidden){
       lastFocus=document.activeElement; lb.hidden=false; document.body.style.overflow='hidden';
@@ -471,6 +498,7 @@ def photographs():
             <p class="bkicker">Behind this photograph</p>
             <p class="btitle"></p>
             <p class="bpoet"></p>
+            <p class="bpoem"></p>
             <p class="bnote">poem text to come</p>
           </div>
         </div>
@@ -481,6 +509,7 @@ def photographs():
   <button class="lb-btn lb-next" aria-label="Next photograph"><svg viewBox="0 0 10 18" width="9" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L8.5 9l-7 7.5"/></svg></button>
 </div>
 
+<script type="application/json" id="poem-texts">{json.dumps(texts, ensure_ascii=False)}</script>
 {lightbox_js}
 </body>
 </html>
