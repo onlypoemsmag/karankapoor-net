@@ -70,6 +70,15 @@ titles and attributions only, pending Karan's texts/permissions.
 - A Charm invests a face — already live on the site (public domain, Wikisource 1891 text)
 
 Not reliably online (Karan's shelves/relationships): Cohen "Beneath My Hands" (*The Spice-Box of Earth*),
-Hicok "More than whispers, less than rumors", Agha Shahid Ali "After You" (*The Country Without a Post Office*?
-— verify source book), Glück "The White Rose" (*The Wild Iris*), Rilke "Palm" (Uncollected/late poems, trans. varies),
+Hicok "More than whispers, less than rumors", Agha Shahid Ali "After You" (*Call Me Ishmael Tonight: A Book of Ghazals*, W. W. Norton
+— confirmed 2026-09-04 against Karan's own ONLY POEMS Daily post: https://onlypoems.substack.com/p/after-you-agha-shahid-ali), Glück "The White Rose" (*The Wild Iris*), Rilke "Palm" (Uncollected/late poems, trans. varies),
 Lee "The Sandalwood", Richardson *Vectors*, plus all the "your pick" collections.
+
+
+## Attribution verification pass (2026-09-04, Claude — HANDOFF step 3)
+
+- Victoria Chang, "Edward Hopper Study: Hotel Room" — CONFIRMED (Poetry Foundation / Poetry magazine; also From the Fishouse, The Slowdown ep. 780).
+- Patricia Smith, "When the Burning Begins" — CONFIRMED (poets.org, from *Teahouse of the Almighty*); it is the father elegy.
+- Terrance Hayes, "New York Poem" — CONFIRMED poem/poet (multiple reprints, e.g. Gwarlingo's Sunday Poem).
+- Agha Shahid Ali, "After You" — CONFIRMED a ghazal, from *Call Me Ishmael Tonight: A Book of Ghazals* (Norton), per Karan's own ONLY POEMS Daily post (link above). Earlier guess *The Country Without a Post Office* was wrong.
+- Li-Young Lee — ⚠ FLAG: the poem in *The Undressing* (Norton, 2018) is titled "Sandalwood", not "The Sandalwood" (per Nguyen Huy Hoang's Li-Young Lee index, hoanghannom.com/2018/08/31/sandalwood/). NOT changed on the site (content wording is Karan's): if the shelf copy agrees, fix tools/build_pages.py line ~289 ("beloved-s-colors") and rebuild.
