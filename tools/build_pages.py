@@ -20,6 +20,9 @@ def head(p, title, desc, canon_path, extra=""):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FDDA0D" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a08" media="(prefers-color-scheme: dark)">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{CANON}{canon_path}">
@@ -40,6 +43,7 @@ def head(p, title, desc, canon_path, extra=""):
 <link rel="preload" href="{p}assets/fonts/Literata-400.woff2" as="font" type="font/woff2" crossorigin>
 {extra}</head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 '''
 
 def nav(p, current, mark_link=True):
@@ -48,7 +52,7 @@ def nav(p, current, mark_link=True):
         return f'<li><a href="{href}"{cur}>{label}</a></li>'
     mark = (f'<a class="mark" href="{p if p else "./"}">Karan Kapoor</a>' if mark_link
             else '<span class="mark">Karan Kapoor</span>')
-    return f'''  <header class="wrap site-head">
+    return f'''  <div class="wrap site-head">
     {mark}
     <nav aria-label="Primary">
       <ul>
@@ -57,7 +61,7 @@ def nav(p, current, mark_link=True):
         {a(p + "photographs/", "Photographs", "photographs")}
       </ul>
     </nav>
-  </header>'''
+  </div>'''
 
 def footer(p):
     return f'''<footer class="site-foot on-dark">
@@ -67,8 +71,8 @@ def footer(p):
       <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
         <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
       </a>
-      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op" style="--mask:url('{p}assets/img/op-logo.png')"></span></a>
-      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp" style="--mask:url('{p}assets/img/sp-logo.png')"></span></a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op"></span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp"></span></a>
       <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
         <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
       </a>
@@ -84,7 +88,7 @@ def footer(p):
 
 # ---------------------------------------------------------------- home
 
-BIO = '''Karan Kapoor is the Co-Founder &amp; Editor-in-Chief of <a class="tlink" href="https://onlypoems.com/"><em>ONLY&nbsp;POEMS</em></a> and <a class="tlink" href="https://www.strangepilgrims.com/"><em>Strange Pilgrims</em></a>. His poems have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Shenandoah</em>, <em>Colorado Review</em>, and elsewhere, fiction in <em>JOYLAND</em> and <em>the other side of hope</em>, and translations in <em>The Offing</em> and <em>The Los Angeles Review</em>. He lives in Toronto, Canada with his wife &amp; daughter.'''
+BIO = '''Karan Kapoor is the Co-Founder &amp; Editor-in-Chief of <a class="tlink" href="https://onlypoems.com/"><em>ONLY&nbsp;POEMS</em></a> and <a class="tlink" href="https://www.strangepilgrims.com/"><em>Strange Pilgrims</em></a>. His debut collection, <em>Thirst</em>, is forthcoming from Alice James Books. His poems have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Shenandoah</em>, <em>Colorado Review</em>, and elsewhere, fiction in <em>JOYLAND</em> and <em>the other side of hope</em>, and translations in <em>The Offing</em> and <em>The Los Angeles Review</em>. He is the Director of Community &amp; Services at <a class="tlink" href="https://www.chillsubs.com/">Chill Subs</a>, and lives in Toronto with his wife &amp; daughter.'''
 
 BLURBS = [
  ("""“I like Karan's poems. They have a mix of imagination and substance that's very appealing to me...“the sky must hate us/ as it sees everything we do.” I'd like to have written that...I’m especially drawn to the combination of directness and privacy in his poems, and the creation of a world within a world."""
@@ -95,7 +99,7 @@ BLURBS = [
 
 PRIZES = '''A portion of this collection was a finalist for <em>Diode</em>, <em>Iron Horse Literary Review</em>, and <em>Tusculum Review</em> Chapbook Prizes, as well as shortlisted for the <em>Rattle</em> Chapbook prize. The full-length collection was also a finalist for the Charles B. Wheeler Poetry Prize (<em>The Journal</em>), the Felix Pollack Poetry Prize (University of Wisconsin-Madison Press) and the <em>Barrow Street</em> Book Prize. Poems from this collection have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Rattle</em>, <em>Plume</em>, <em>TAB</em>, <em>Poetry Ireland Review</em>, <em>New Welsh Review</em>, <em>Poetry Online</em>, <em>Frontier Poetry</em>, <em>The Margins</em>, <em>Southword</em> and elsewhere.'''
 
-ABOUT1 = '''Though borrowing heavily from personal experience, this collection is constructed with dream and distance. Rooted in the specific time and place of modern Northern India, the themes I explore radiate outwards, and hopefully, this work is as much a mirror as it is a memoir. I am attempting to forge a space for myself, an Indian poet of a fragmented, autocratic past directly marred by the colonial era, in the American poetry scene.'''
+ABOUT1 = '''Borrowing heavily from personal experience, this collection is as much constructed with dream and distance. Rooted in the specific time and place of modern Northern India, the themes I explore radiate outwards, and hopefully, this is as much a mirror as it is memoir. I am attempting to forge a space for myself, an Indian poet of a fragmented, autocratic past directly marred by the colonial era, in the American poetry scene.'''
 ABOUT2 = '''This collection is composed of over 50 poems profiling my father through hybrid forms (such as the interview, questionnaire, visual fragments, prose poems) and traditional forms (villanelle, ghazal, free verse). The poems attempt an obsessive portrait of another that eventually becomes a self-portrait.'''
 
 def home():
@@ -125,7 +129,7 @@ def home():
     return head(p, "Karan Kapoor",
         "Karan Kapoor is a poet and editor — Co-Founder & Editor-in-Chief of ONLY POEMS and Strange Pilgrims. His debut collection THIRST is forthcoming from Alice James Books in April 2028.",
         "/", extra) + f'''
-<div class="cover on-yellow">
+<header class="cover on-yellow">
 {nav(p, "home", mark_link=False)}
   <div class="wrap middle">
     <div class="grid">
@@ -144,9 +148,9 @@ def home():
   <div class="wrap foot">
     <a class="down" href="#bio">Read on ↓</a>
   </div>
-</div>
+</header>
 
-<main>
+<main id="main">
   <section class="bio wrap" id="bio">
     <p>{BIO}</p>
   </section>
@@ -223,14 +227,14 @@ def poems():
     return head(p, "Poems — Karan Kapoor",
         "Selected poems by Karan Kapoor, published in Rattle, Margins, The Maine Review, Colorado Review, The Ex-Puritan and elsewhere — and a short story in JOYLAND.",
         "/poems/") + f'''
-<div class="band on-yellow">
+<header class="band on-yellow">
 {nav(p, "poems")}
   <div class="wrap titlebox">
     <h1>Selected Poems</h1>
   </div>
-</div>
+</header>
 
-<main class="ledger wrap">
+<main class="ledger wrap" id="main">
   <ul class="poemlist">
 {rows}
   </ul>
@@ -368,6 +372,14 @@ def photographs():
     if(e.key==='Escape')hide();
     if(e.key==='ArrowLeft')show(idx-1);
     if(e.key==='ArrowRight')show(idx+1);
+    if(e.key==='Tab'){
+      var f=[].slice.call(lb.querySelectorAll('button,[tabindex="0"]')).filter(function(el){return el.offsetParent!==null;});
+      if(!f.length)return;
+      var first=f[0], last=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+      else if(!lb.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+    }
   });
   var x0=null;
   lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
@@ -382,14 +394,14 @@ def photographs():
     return head(p, "Photographs — Karan Kapoor",
         "Photographs by Karan Kapoor. “A photograph: poetry made image.” —Sivi le poète",
         "/photographs/") + f'''
-<div class="band on-yellow">
+<header class="band on-yellow">
 {nav(p, "photographs")}
   <div class="wrap titlebox">
     <h1>Photographs</h1>
   </div>
-</div>
+</header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <div class="epigraph">
     <p>“A photograph: poetry made image.”</p>
     <cite>―Sivi le poète</cite>
@@ -435,6 +447,7 @@ def page_404():
     p = ""
     return head(p, "Page not found — Karan Kapoor",
         "This page doesn't exist.", "/404.html") + f'''
+<main id="main">
 <div class="cover on-yellow" style="min-height:100svh">
 {nav(p, "")}
   <div class="wrap middle">
@@ -445,6 +458,7 @@ def page_404():
   </div>
   <div class="wrap foot"></div>
 </div>
+</main>
 </body>
 </html>
 '''

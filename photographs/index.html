@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FDDA0D" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a08" media="(prefers-color-scheme: dark)">
 <title>Photographs — Karan Kapoor</title>
 <meta name="description" content="Photographs by Karan Kapoor. “A photograph: poetry made image.” —Sivi le poète">
 <link rel="canonical" href="https://www.karankapoor.net/photographs/">
@@ -23,9 +26,10 @@
 <link rel="preload" href="../assets/fonts/Literata-400.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="band on-yellow">
-  <header class="wrap site-head">
+<header class="band on-yellow">
+  <div class="wrap site-head">
     <a class="mark" href="../">Karan Kapoor</a>
     <nav aria-label="Primary">
       <ul>
@@ -34,13 +38,13 @@
         <li><a href="../photographs/" aria-current="page">Photographs</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
   <div class="wrap titlebox">
     <h1>Photographs</h1>
   </div>
-</div>
+</header>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <div class="epigraph">
     <p>“A photograph: poetry made image.”</p>
     <cite>―Sivi le poète</cite>
@@ -398,8 +402,8 @@
       <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
         <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
       </a>
-      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op" style="--mask:url('../assets/img/op-logo.png')"></span></a>
-      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp" style="--mask:url('../assets/img/sp-logo.png')"></span></a>
+      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op"></span></a>
+      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp"></span></a>
       <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
         <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
       </a>
@@ -533,6 +537,14 @@
     if(e.key==='Escape')hide();
     if(e.key==='ArrowLeft')show(idx-1);
     if(e.key==='ArrowRight')show(idx+1);
+    if(e.key==='Tab'){
+      var f=[].slice.call(lb.querySelectorAll('button,[tabindex="0"]')).filter(function(el){return el.offsetParent!==null;});
+      if(!f.length)return;
+      var first=f[0], last=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+      else if(!lb.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+    }
   });
   var x0=null;
   lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});

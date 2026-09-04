@@ -20,30 +20,73 @@
   --yellow:#FDDA0D;
   --ink:#000000;
   --paper:#ffffff;
+  color-scheme:light dark;
+  /* page tokens (light) */
+  --bg:#ffffff;
+  --fg:#000000;
   --rule:rgba(0,0,0,.15);
   --rule-y:rgba(0,0,0,.25);
   --rule-inv:rgba(255,255,255,.22);
   --muted:rgba(0,0,0,.56);
   --muted-inv:rgba(255,255,255,.64);
+  /* the yellow surfaces (cover, title bands) */
+  --band-bg:#FDDA0D;
+  --band-fg:#000000;
+  --band-head:#000000;
+  --band-muted:rgba(0,0,0,.62);
+  --band-rule:rgba(0,0,0,.25);
+  --band-border:transparent;
+  /* highlight hover */
+  --hl-bg:#FDDA0D;
+  --hl-fg:#000000;
+  --sel-bg:#000000;
+  --sel-fg:#FDDA0D;
+  --thirst-border:transparent;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    /* the Night Edition: black page, yellow display type */
+    --bg:#0b0a08;
+    --fg:#f5f2e9;
+    --rule:rgba(255,255,255,.2);
+    --muted:rgba(245,242,233,.62);
+    --band-bg:#0b0a08;
+    --band-fg:#f5f2e9;
+    --band-head:#FDDA0D;
+    --band-muted:rgba(245,242,233,.62);
+    --band-rule:rgba(255,255,255,.2);
+    --band-border:rgba(255,255,255,.2);
+    --sel-bg:#FDDA0D;
+    --sel-fg:#000000;
+    --thirst-border:rgba(255,255,255,.2);
+  }
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html.lenis{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 body{
-  background:var(--paper);color:var(--ink);
+  background:var(--bg);color:var(--fg);
   font-family:'Literata',Georgia,serif;
   font-size:1.15rem;line-height:1.68;
   -webkit-font-smoothing:antialiased;
 }
-a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+a:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .on-dark a:focus-visible{outline-color:var(--yellow)}
-::selection{background:var(--ink);color:var(--yellow)}
+::selection{background:var(--sel-bg);color:var(--sel-fg)}
 .wrap{max-width:68rem;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem)}
 img{max-width:100%;height:auto;display:block;border-radius:var(--r)}
 
+/* ---------- skip link ---------- */
+.skip{
+  position:absolute;left:-999px;top:0;z-index:100;
+  background:var(--ink);color:var(--yellow);padding:.7rem 1.2rem;border-radius:0 0 8px 0;
+  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+}
+.skip:focus{left:0}
+
 /* ---------- text links: yellow underline, wash on hover ---------- */
-.tlink{color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
-.tlink:hover{background:var(--yellow);text-decoration-color:var(--ink)}
+.tlink{color:var(--fg);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
+.tlink:hover{background:var(--yellow);color:var(--ink);text-decoration-color:var(--ink)}
 .on-dark .tlink{color:var(--paper);text-decoration-color:var(--yellow);text-decoration-thickness:2px}
 .on-dark .tlink:hover{background:var(--yellow);color:var(--ink)}
 
@@ -70,7 +113,7 @@ a.site-head-mark-link, .site-head a.mark{
 }
 .site-head nav a:hover{background-size:100% 1.5px}
 .site-head nav a[aria-current]{background-image:linear-gradient(var(--yellow),var(--yellow));background-size:100% 1.5px}
-.on-yellow .site-head nav a[aria-current]{background-image:linear-gradient(var(--ink),var(--ink))}
+.on-yellow .site-head nav a[aria-current]{background-image:linear-gradient(var(--band-head),var(--band-head))}
 
 /* ---------- button: black pill w/ yellow text; hover inverts + zooms ---------- */
 .btn{
@@ -102,7 +145,7 @@ blockquote.blurb cite{
 blockquote.blurb cite::before{content:"— "}
 
 /* ---------- footer: icons + envelope w/ opening flap ---------- */
-.site-foot{background:var(--ink);color:var(--yellow);padding-block:2.6rem 3rem}
+.site-foot{background:var(--ink);color:var(--yellow);padding-block:2.6rem 3rem;border-top:1px solid var(--thirst-border)}
 .site-foot .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.4rem}
 .site-foot .place{font-style:italic;font-size:.98rem;color:var(--muted-inv)}
 .site-foot .links{display:flex;gap:1.9rem;flex-wrap:wrap;align-items:center}
@@ -114,10 +157,11 @@ blockquote.blurb cite::before{content:"— "}
 .icon-link svg{display:block;overflow:visible}
 .logo-mask{
   display:block;background:currentColor;
-  -webkit-mask:var(--mask) center/contain no-repeat;mask:var(--mask) center/contain no-repeat;
+  -webkit-mask-position:center;-webkit-mask-size:contain;-webkit-mask-repeat:no-repeat;
+  mask-position:center;mask-size:contain;mask-repeat:no-repeat;
 }
-.logo-op{width:27px;height:29px}
-.logo-sp{width:24px;height:32px}
+.logo-op{width:27px;height:29px;-webkit-mask-image:url('../img/op-logo.png');mask-image:url('../img/op-logo.png')}
+.logo-sp{width:24px;height:32px;-webkit-mask-image:url('../img/sp-logo.png');mask-image:url('../img/sp-logo.png')}
 .mail-link .m-body{fill:none;stroke:currentColor;stroke-width:2.2}
 .mail-link .m-flap{
   fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
@@ -134,29 +178,29 @@ blockquote.blurb cite::before{content:"— "}
 }
 
 /* ============================================================ home */
-.cover{min-height:100svh;background:var(--yellow);color:var(--ink);display:flex;flex-direction:column}
+.cover{min-height:100svh;background:var(--band-bg);color:var(--band-fg);display:flex;flex-direction:column}
 .cover > .wrap{width:100%} /* auto side-margins cancel flex stretch */
 .cover .middle{flex:1;display:flex;align-items:center;padding-block:2.5rem}
 .cover .grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2.5rem,6vw,5rem);align-items:center;width:100%}
 .cover h1{
   font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:.95;letter-spacing:-.01em;
   font-size:clamp(3.2rem,9vw,7.5rem);text-transform:uppercase;
-  font-variation-settings:'opsz' 144;
+  font-variation-settings:'opsz' 144;color:var(--band-head);
 }
 .cover h1 span{display:block}
 .cover .coverline{margin-top:1.8rem;font-size:1.15rem;font-style:italic}
 .cover .portrait img{border-radius:10px;box-shadow:0 18px 44px rgba(0,0,0,.18)}
-.cover .foot{padding-bottom:1.8rem;border-top:1px solid var(--rule-y);padding-top:1.3rem;display:flex;justify-content:flex-end}
+.cover .foot{padding-bottom:1.8rem;border-top:1px solid var(--band-rule);padding-top:1.3rem;display:flex;justify-content:flex-end}
 .cover .foot .down{
   font-family:'Fraunces',Georgia,serif;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
-  color:var(--ink);text-decoration:none;white-space:nowrap;display:inline-block;transition:transform .18s;
+  color:var(--band-fg);text-decoration:none;white-space:nowrap;display:inline-block;transition:transform .18s;
 }
 .cover .foot .down:hover{transform:scale(1.06)}
 
 .bio{padding-block:clamp(4rem,8vw,6.5rem)}
 .bio p{font-size:clamp(1.3rem,2.3vw,1.7rem);line-height:1.55;max-width:46rem;text-wrap:pretty}
 
-.thirst{background:var(--ink);color:var(--paper);padding-block:clamp(4rem,8vw,6.5rem)}
+.thirst{background:#000;color:#fff;padding-block:clamp(4rem,8vw,6.5rem);border-block:1px solid var(--thirst-border)}
 .thirst h2{
   color:var(--yellow);font-family:'Fraunces',Georgia,serif;font-weight:900;text-transform:uppercase;
   font-size:clamp(3rem,8.5vw,6.5rem);line-height:1;margin-top:1rem;letter-spacing:.02em;
@@ -174,19 +218,19 @@ blockquote.blurb cite::before{content:"— "}
 .blurbs blockquote.blurb{margin-top:3rem}
 
 /* ============================================================ poems */
-.band{background:var(--yellow);color:var(--ink)}
+.band{background:var(--band-bg);color:var(--band-fg);border-bottom:1px solid var(--band-border)}
 .band .titlebox{padding-block:clamp(2.5rem,6vw,4.5rem)}
 .band h1{
   font-family:'Fraunces',Georgia,serif;font-weight:900;text-transform:uppercase;
   font-size:clamp(2.8rem,8vw,6rem);line-height:1;letter-spacing:.01em;
-  font-variation-settings:'opsz' 144;
+  font-variation-settings:'opsz' 144;color:var(--band-head);
 }
 .ledger{padding-block:clamp(3rem,6vw,5rem)}
 .poemlist{list-style:none;border-top:1px solid var(--rule)}
 .poemlist li{border-bottom:1px solid var(--rule)}
 .rowlink{
   display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:1.5rem;
-  padding:1.35rem .35rem;text-decoration:none;color:var(--ink);
+  padding:1.35rem .35rem;text-decoration:none;color:var(--fg);
 }
 .rowlink .ptitle{
   font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.15rem,2vw,1.4rem);
@@ -194,9 +238,9 @@ blockquote.blurb cite::before{content:"— "}
   transition:background-color .22s;padding:.06em .18em;margin:-.06em -.18em;border-radius:4px;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
 }
-a.rowlink:hover .ptitle{background-color:var(--yellow)}
+a.rowlink:hover .ptitle{background-color:var(--hl-bg);color:var(--hl-fg)}
 .rowlink .venue{font-style:italic;font-size:1.05rem;color:var(--muted);white-space:nowrap;transition:color .22s}
-a.rowlink:hover .venue{color:var(--ink)}
+a.rowlink:hover .venue{color:var(--fg)}
 .fiction-head{margin-top:3.5rem;margin-bottom:1rem}
 
 /* ============================================================ photographs */
