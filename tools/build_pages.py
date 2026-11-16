@@ -71,12 +71,12 @@ def footer(p):
       <a class="icon-link mail-link" href="mailto:karan@onlypoems.com" aria-label="Email Karan" title="Email Karan">
         <svg viewBox="0 0 34 26" width="28" height="21" aria-hidden="true"><rect class="m-body" x="1" y="1" width="32" height="24" rx="5"></rect><path class="m-flap" d="M3 4l14 11L31 4"></path></svg>
       </a>
-      <a class="icon-link" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op"></span></a>
-      <a class="icon-link" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp"></span></a>
-      <a class="icon-link" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
+      <a class="icon-link" target="_blank" rel="noopener" href="https://onlypoems.com/" aria-label="ONLY POEMS" title="ONLY POEMS"><span class="logo-mask logo-op"></span></a>
+      <a class="icon-link" target="_blank" rel="noopener" href="https://www.strangepilgrims.com/" aria-label="Strange Pilgrims" title="Strange Pilgrims"><span class="logo-mask logo-sp"></span></a>
+      <a class="icon-link" target="_blank" rel="noopener" href="https://www.instagram.com/whyareyounotreading/" aria-label="Instagram" title="Instagram">
         <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg>
       </a>
-      <a class="icon-link" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
+      <a class="icon-link" target="_blank" rel="noopener" href="https://substack.com/@poetkarankapoor" aria-label="Substack" title="Substack">
         <svg viewBox="0 0 24 24" width="19" height="21" fill="currentColor" aria-hidden="true"><path d="M3 3.5h18v2.4H3zM3 8.2h18v2.4H3zM3 12.9h18V21l-9-4.6L3 21z"/></svg>
       </a>
     </div>
@@ -88,7 +88,7 @@ def footer(p):
 
 # ---------------------------------------------------------------- home
 
-BIO = '''Karan Kapoor is the Co-Founder &amp; Editor-in-Chief of <a class="tlink" href="https://onlypoems.com/"><em>ONLY&nbsp;POEMS</em></a> and <a class="tlink" href="https://www.strangepilgrims.com/"><em>Strange Pilgrims</em></a>. His debut collection, <em>Thirst</em>, is forthcoming from Alice James Books. His poems have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Shenandoah</em>, <em>Colorado Review</em>, and elsewhere, fiction in <em>JOYLAND</em> and <em>the other side of hope</em>, and translations in <em>The Offing</em> and <em>The Los Angeles Review</em>. He is the Director of Community &amp; Services at <a class="tlink" href="https://www.chillsubs.com/">Chill Subs</a>, and lives in Toronto with his wife &amp; daughter.'''
+BIO = '''Karan Kapoor is the Co-Founder &amp; Editor-in-Chief of <a class="tlink" target="_blank" rel="noopener" href="https://onlypoems.com/"><em>ONLY&nbsp;POEMS</em></a> and <a class="tlink" target="_blank" rel="noopener" href="https://www.strangepilgrims.com/"><em>Strange Pilgrims</em></a>. His debut collection, <em>Thirst</em>, is forthcoming from Alice James Books. His poems have appeared in <em>Best New Poets</em>, <em>AGNI</em>, <em>Shenandoah</em>, <em>Colorado Review</em>, and elsewhere, fiction in <em>JOYLAND</em> and <em>the other side of hope</em>, and translations in <em>The Offing</em> and <em>The Los Angeles Review</em>. He is the Director of Community &amp; Services at <a class="tlink" target="_blank" rel="noopener" href="https://www.chillsubs.com/">Chill Subs</a>, and lives in Toronto with his wife &amp; daughter.'''
 
 BLURBS = [
  ("""“I like Karan's poems. They have a mix of imagination and substance that's very appealing to me...“the sky must hate us/ as it sees everything we do.” I'd like to have written that...I’m especially drawn to the combination of directness and privacy in his poems, and the creation of a world within a world."""
@@ -159,12 +159,12 @@ def home():
     <div class="wrap">
       <p class="kicker rise" data-hidden><span>Debut poetry collection</span></p>
       <h2 class="rise" data-hidden><span>Thirst</span></h2>
-      <p class="sub rise" data-hidden><span>Forthcoming from <a class="tlink" href="https://www.alicejamesbooks.org/bookstore/thirst">Alice James Books</a> in April 2028</span></p>
+      <p class="sub rise" data-hidden><span>Forthcoming from <a class="tlink" target="_blank" rel="noopener" href="https://www.alicejamesbooks.org/bookstore/thirst">Alice James Books</a> in April 2028</span></p>
       <div class="cols">
         <div class="about">
           <p class="rise" data-hidden><span>{ABOUT1}</span></p>
           <p class="rise" data-hidden><span>{ABOUT2}</span></p>
-          <p class="btnrow rise" data-hidden><a class="btn" href="https://www.alicejamesbooks.org/bookstore/thirst">Pre-order Here</a></p>
+          <p class="btnrow rise" data-hidden><a class="btn" target="_blank" rel="noopener" href="https://www.alicejamesbooks.org/bookstore/thirst">Pre-order Here</a></p>
         </div>
         <figure class="rise" data-hidden>
           <span>
@@ -218,7 +218,7 @@ FICTION = ("A Perfect House Is Where No One Lives", "JOYLAND",
 def poem_row(t, v, u):
     inner = f'<span class="ptitle">{t}</span><span class="venue">{v}</span>'
     if u:
-        return f'    <li><a class="rowlink" href="{u}">{inner}</a></li>'
+        return f'    <li><a class="rowlink" target="_blank" rel="noopener" href="{u}">{inner}</a></li>'
     return f'    <li><div class="rowlink">{inner}</div></li>'
 
 def poems():
