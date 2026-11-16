@@ -22,10 +22,11 @@ site on GitHub Pages. Repo: https://github.com/onlypoemsmag/karankapoor-net
   black-pill/yellow-text buttons that invert + scale(1.055) on hover, icon footer
   with envelope whose flap opens on hover, OP/SP logos as CSS masks
   (assets/img/*-logo.png, colored via currentColor).
-- Photographs lightbox: opens growing out of the clicked tile, page blurs behind,
-  card tilts with the pointer (rotateX 13.6 / rotateY 16, perspective 1600),
-  click flips it (rAF-eased 620ms, direction from which half you push, gloss
-  sweep) to reveal the paired poem. Everything dies under prefers-reduced-motion.
+- Photographs lightbox: opens growing out of the clicked tile, page blurs behind.
+  Open animation dies under prefers-reduced-motion. The tilt/flip-to-poem card
+  was REMOVED at Karan's request (2026-11-16): photos open plainly and never
+  flip. Pairing data (data-poem/data-poet, PAIRINGS.md, content/poems/) is kept
+  in the repo but no longer rendered on the page.
 - Content fidelity is absolute: wording from archive/content.md unless Karan
   approved a change (current bio + book description in tools/build_pages.py are
   the approved 2026-09-04 versions). Titles italic per style: journals/books
@@ -37,10 +38,9 @@ site on GitHub Pages. Repo: https://github.com/onlypoemsmag/karankapoor-net
 - `python3 tools/build_pages.py` regenerates index.html, poems/, photographs/,
   404.html, home/ (redirect), sitemap.xml, robots.txt. ALL page edits happen in
   this script, not in the emitted HTML.
-- Poem texts for the photo card backs: drop plain-text files in content/poems/
-  named by slug (see content/poems/README.md), rebuild, push. Dickinson's
-  marble-veil.txt is the working example (public domain). Karan holds permissions
-  for the rest and pastes them himself; Claude must not paste in-copyright texts.
+- Poem texts (content/poems/, slug-named .txt, see that README) were for the
+  flip-card backs, removed 2026-11-16 — the pipeline is dormant but kept.
+  Karan holds permissions; Claude must not paste in-copyright texts.
 - PAIRINGS.md = full photo→poem pairing table + verified source links.
 
 ## Deployment / domain state (as of 2026-09-04)
