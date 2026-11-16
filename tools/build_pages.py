@@ -410,7 +410,7 @@ def photographs():
     if(Math.abs(dx)>40) show(dx<0? idx+1 : idx-1);
   },{passive:true});
 })();
-</scr" + "ipt>'''
+</script>'''
 
     return head(p, "Photographs — Karan Kapoor",
         "Photographs by Karan Kapoor. “A photograph: poetry made image.” —Sivi le poète",
